@@ -1,0 +1,9 @@
+.cart-image{
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+input[type="number"]{
+  width: 80px;
+}

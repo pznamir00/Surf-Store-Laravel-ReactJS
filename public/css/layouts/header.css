@@ -1,0 +1,25 @@
+#navbarSupportedContent{
+  position: fixed;
+  background: #ddd;
+  width: 100%;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+}
+
+.dropdown{
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.search-panel{
+  width: 300px;
+  float: right;
+  right: 20px;
+}
+
+.user-panel{
+  margin-right: 100px;
+}

@@ -1,0 +1,58 @@
+#images{
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+#main-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#description{
+  width: 400px;
+  min-height: 200px;
+  border-right: solid 1px #eee;
+  float: left;
+}
+
+#price{
+  font-size: 24px;
+}
+
+#price b::before{
+  content: "$";
+}
+
+#sizes{
+  margin-top: 50px;
+}
+
+input[name="selected_size"]{
+  display: none;
+}
+
+input[name="selected_size"]:checked + span{
+  color: white;
+  background: black;
+}
+
+.size-label span{
+  display: inline-block;
+  margin: 3px;
+  text-transform: uppercase;
+  border: 2px solid black;
+  border-radius: 2px;
+  color: black;
+  padding: 6px 10px;
+}
+
+.btn-info{
+  font-size: 20px;
+}
+
+.operation{
+  float: left;
+  margin: 5px;
+}
