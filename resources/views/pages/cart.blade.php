@@ -2,9 +2,10 @@
 
 @section('title', '| Cart')
 
+@section('content')
+
 <link rel="stylesheet" type="text/css" href="{{ asset('css/pages/cart.css') }}"/>
 
-@section('content')
 
     <table class="table table">
       <thead>
@@ -22,16 +23,20 @@
           <td>{{$item['product']->price}}</td>
           <td>{{$item['size']->value}}</td>
           <td><input class="form-control" type="number" data-sid="{{$item['size']->id}}" value="{{$item['qty']}}" max="{{$item['size']->quantity}}" min="1"/></td>
-          <td><a href="/cart/delete/{{$key}}">Delete</a></td>
+          <td>
+            {!! Form::open(['action'=>'CartController@delete_from_cart', 'method'=>'DELETE']) !!}
+              @csrf
+              {{Form::hidden('key', $key)}}
+              {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
+            {!! Form::close() !!}
+          </td>
         </tr>
       @endforeach
     </table>
 
     <a href="{{route('order_form')}}" class="btn btn-primary">Order</a>
+    <a href="/cart/clear" class="btn btn-danger float-right">Clear cart</a>
 
     <div id="root"></root>
-
-    <a href="{{ route('order_form') }}" class="btn btn-primary">Order</a>
-    <a href="/cart/clear" class="btn btn-danger float-right">Clear cart</a>
 
 @endsection

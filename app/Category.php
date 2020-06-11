@@ -9,18 +9,8 @@ class Category extends Model
 {
     protected $fillable = [
       'title',
+      'slug'
     ];
-
-    public static function create_slug($title)
-    {
-      $slug = preg_replace('~[^\pL\d]+~u', '-', $title);
-      $slug = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
-      $slug = preg_replace('~[^-\w]+~', '', $slug);
-      $slug = trim($slug, '-');
-      $slug = preg_replace('~-+~', '-', $slug);
-      $slug = strtolower($slug);
-      return empty($slug) ? 'slug' : $slug;
-    }
 
     public function subcategories()
     {

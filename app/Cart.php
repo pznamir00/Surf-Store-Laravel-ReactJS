@@ -3,6 +3,8 @@
 
 namespace App;
 use Session;
+use App\Product;
+use App\Delivery;
 
 
 
@@ -41,5 +43,22 @@ class Cart
 
     if(count($this->items) == 0)
       Session::forget('cart');
+  }
+
+
+  public function count_total()
+  {
+    $total = 0;
+    foreach($this->items as $item){
+      $p = Product::find($item['product id']);
+      $total += ($p->price * $item['quantity']);
+    }
+
+    if(Session::has('delivery_id')){
+      $del = Delivery::find( session('delivery_id') );
+      $total += $del->price;
+    }
+
+    return $total;
   }
 }

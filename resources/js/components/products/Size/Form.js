@@ -4,7 +4,7 @@ import React from 'react';
 const Form = (props) => {
   return (
     <React.Fragment>
-      <label for="size-table" class="mb-3">Sizes</label>
+      <label htmlFor="size-table" className="mb-3">Sizes</label>
       <table id="size-table" className="table table mb-5">
         <thead>
           <tr>

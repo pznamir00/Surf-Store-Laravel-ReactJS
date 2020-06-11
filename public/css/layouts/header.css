@@ -1,11 +1,23 @@
-#navbarSupportedContent{
+header{
   position: fixed;
-  background: #ddd;
-  width: 100%;
-  top: 60px;
+  width: 100vw;
+  z-index: 4;
+}
+
+.navbar-brand{
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#navbarSupportedContent{
+  background: #2f3033;
   left: 0;
-  right: 0;
-  z-index: 99999;
+  margin-left: -4px;
+  margin-top: -4px;
+  padding: 1px;
+}
+
+.dropdown-toggle{
+  color: #777;
 }
 
 .dropdown{
@@ -22,4 +34,49 @@
 
 .user-panel{
   margin-right: 100px;
+}
+
+.user-panel .guest-contorl, #navbarDropdown{
+  margin-top: -65px;
+}
+
+.dropdown-menu-right{
+  margin-top: -30px;
+}
+
+.cart-b{
+  margin-top: -65px;
+  height: 40px;
+}
+
+@media (max-width: 720px){
+  .search-panel{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #navbarDropdown{
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .dropdown-menu-right{
+    margin-top: 0px;
+  }
+
+  .cart-b{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 40px;
+    width: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #navbarSupportedContent{
+    padding: 6px;
+  }
 }

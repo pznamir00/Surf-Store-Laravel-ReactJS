@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 
 export default class Images extends Component{
 
-  constructor(){
-    super();
-
+  constructor(props){
+    super(props);
     this.state = {
       token: $('meta[name="csrf-token"]').attr('content'),
       dropzone: null,
@@ -13,10 +12,9 @@ export default class Images extends Component{
   }
 
   async componentDidMount(){
-
     Dropzone.autoDiscover = false;
     $('#save-button').on('click', this.handleSubmit.bind(this));
-
+    const component = this;
     await this.setState({
       dropzone: new Dropzone(document.getElementById('dropzone'), {
                   maxFilesize: 8,
@@ -45,25 +43,11 @@ export default class Images extends Component{
                     });
                   }
                 }),
-    });
-
-    if(this.props.preload)
-      this.preload();
-  }
-
-  preload(){
-    const files = $('.image-filename');
-    for(var i=0; i<files.length; i++)
-    {
-        var file = {
-          name: files[i].value,
-          size: 12345,
-        };
-        this.state.dropzone.emit('addedfile', file);
-        this.state.dropzone.emit('thumbnail', file, 'http://127.0.0.1:8000/images/' + file.name);
-        console.log(file.name);
+              });
+      if(this.props.preload){
+        this.props.preload(this.state.dropzone);
+      }
     }
-  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -81,7 +65,7 @@ export default class Images extends Component{
   render() {
     return (
       <React.Fragment>
-        <label for="dropzone">Images</label>
+        <label htmlFor="dropzone">Images</label>
         <form action="/products/images/upload" method="POST" encType="multipart/form-data" className="dropzone mt-2" id="dropzone" files="true"></form>
       </React.Fragment>
     );

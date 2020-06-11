@@ -14,18 +14,17 @@
     <strong class="mt-2"><a href="{{ '/products/'.$category->slug.'/'.$subcat->slug }}">Category > {{$category->title}} > {{$subcat->title}}</a></strong>
   </div>
 
-  <div id="images">
-      <img id="main-image" class="col-12 col-md-10 col-xl-8" src="{{'/images/'.$product->images[0]->url}}" alt="Main product image"/>
-      @foreach($product->images as $img)
-        <img src="/images/{{$img->url}}" alt="{{$img->url}}" width="100" height="100"/>
-      @endforeach
-      <hr>
+  <div>
+    @foreach($product->images as $img)
+      <input type="hidden" class="slider-image" value="{{$img->url}}"/>
+    @endforeach
+    <div id="root"></div>
   </div>
 
   <div id="description">
     <b>Description:</b>
     <p>
-      {{$product->description}}
+      {!! $product->description !!}
     </p>
   </div>
 
@@ -46,7 +45,7 @@
           @endforeach
       </div>
 
-      <div id="root"></div>
+      <div id="add-to-cart-button"></div>
     </form>
   </div>
 
@@ -55,10 +54,11 @@
   <div class="mb-5 pb-5">
     @if(Auth::check())
       <a href="{{ route('edit_product', $product->id) }}" class="btn btn-primary operation"><i class="fa fa-pencil-square-o mr-3"></i>Edit</a>
-      <form action="/products/delete/{{$product->id}}" method="POST">
+      {!! Form::open(['action'=>'ProductController@delete', 'method'=>'DELETE']) !!}
         @csrf
-        <button type="submit" class="btn btn-danger operation"><i class="fa fa-trash mr-3"></i>Delete</button>
-      </form>
+        {{Form::hidden('product_id', $product->id)}}
+        <button class="btn btn-danger m-1"><i class="fa fa-trash mr-3"></i>Delete</button>
+      {!! Form::close() !!}
     @endif
 
     <div class="float-right">

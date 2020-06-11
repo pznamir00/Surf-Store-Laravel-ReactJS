@@ -48,8 +48,9 @@ class CartController extends Controller
 
 
 
-    public function delete_from_cart($key)
+    public function delete_from_cart(Request $request)
     {
+      $key = $request->input('key');
       Session::get('cart')->remove($key);
       return redirect('/')->with('success', 'Removed item from cart');
     }

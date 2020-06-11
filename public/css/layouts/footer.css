@@ -28,8 +28,8 @@ footer{
   padding: 3px;
 }
 
-.list-group-item-dark{
-  background: #444;
+.footer-list-item{
+  margin-left: 20px;
   color: #aeaeae;
 }
 

@@ -8,7 +8,7 @@
         <strong>{{$cat->title}}</strong>
         <ul class="list-group">
           @foreach($cat->subcategories as $subcat)
-            <a href="{{ 'products/'.$cat->slug.'/'.$subcat->slug }}"><li class="list-group-item list-group-item-action list-group-item-dark">{{$subcat->title}}</li></a>
+            <a href="{{ 'products/'.$cat->slug.'/'.$subcat->slug }}"><li class="footer-list-item">{{$subcat->title}}</li></a>
           @endforeach
         </ul>
       </div>

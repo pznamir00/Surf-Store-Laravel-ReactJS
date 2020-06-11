@@ -16,7 +16,7 @@
       @foreach($products as $product)
         <a href="{{ route('one_product', $product->id) }}" class="product col-6 col-lg-4 col-xl-3">
           @if(count($product->images))
-            <img src="{{ 'images/'.$product->images[0]->url }}" alt="{{$product->title}}"/>
+            <img src="{{ asset('images').'/'.$product->images[0]->url }}" alt="{{$product->title}}"/>
           @endif
           <strong>{{$product->title}}</strong>
         </a>

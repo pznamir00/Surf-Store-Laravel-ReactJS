@@ -20,16 +20,18 @@
 
     <main class="py-4">
         <div class="mt-5 mb-5">
-          @if($errors->any())
+          @if(Session::has('errors'))
             {!! implode('', $errors->all('<div class="btn btn-danger error">:message</div>')) !!}
           @endif
         </div>
-        <div class="mt-5 mb-5">
+        <div class="mb-5" style="margin-top: 100px;">
           @if(session('success'))
             <div class="btn btn-success" style="width: 100%;">{{ session('success') }}</div>
           @endif
         </div>
-        @yield('content')
+        <div style="margin-top: 180px; margin-bottom: 180px;">
+          @yield('content')
+        </div>
     </main>
 
     @include('layouts.footer')
@@ -38,6 +40,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/dropzone.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>

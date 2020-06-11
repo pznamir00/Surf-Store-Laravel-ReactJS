@@ -35414,8 +35414,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/header/index.js */ "./resources/js/components/header/index.js");
 /* harmony import */ var _components_products_AddProduct__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/products/AddProduct */ "./resources/js/components/products/AddProduct.js");
 /* harmony import */ var _components_products_EditProduct__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/products/EditProduct */ "./resources/js/components/products/EditProduct.js");
-/* harmony import */ var _components_pages_OneProductForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/pages/OneProductForm */ "./resources/js/components/pages/OneProductForm.js");
+/* harmony import */ var _components_pages_OneProduct_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/pages/OneProduct/index */ "./resources/js/components/pages/OneProduct/index.js");
 /* harmony import */ var _components_pages_Cart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/pages/Cart */ "./resources/js/components/pages/Cart.js");
+/* harmony import */ var _components_order_index__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/order/index */ "./resources/js/components/order/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35437,6 +35438,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -35471,10 +35473,16 @@ var App = /*#__PURE__*/function (_Component) {
         component: _components_products_EditProduct__WEBPACK_IMPORTED_MODULE_5__["default"]
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/products/:id",
-        component: _components_pages_OneProductForm__WEBPACK_IMPORTED_MODULE_6__["default"]
+        component: _components_pages_OneProduct_index__WEBPACK_IMPORTED_MODULE_6__["default"]
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/cart",
         component: _components_pages_Cart__WEBPACK_IMPORTED_MODULE_7__["default"]
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/order/delivery",
+        component: _components_order_index__WEBPACK_IMPORTED_MODULE_8__["default"]
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/order/payment",
+        component: _components_order_index__WEBPACK_IMPORTED_MODULE_8__["default"]
       }))));
     }
   }]);
@@ -35488,43 +35496,6 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 if (document.getElementById('root')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.StrictMode, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null)), document.getElementById('root'));
 }
-
-/***/ }),
-
-/***/ "./resources/js/components/header/HeaderNavbarHandle.js":
-/*!**************************************************************!*\
-  !*** ./resources/js/components/header/HeaderNavbarHandle.js ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var HeaderNavbarHandle = function HeaderNavbarHandle() {
-  window.onscroll = function () {
-    var $navbar = $('#navbarSupportedContent');
-
-    if (window.pageYOffset < 60) {
-      $navbar.css({
-        top: '60px'
-      });
-    } else {
-      $navbar.css({
-        top: '0'
-      });
-    }
-
-    console.log('scroll');
-  };
-
-  return null;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (HeaderNavbarHandle);
 
 /***/ }),
 
@@ -35574,16 +35545,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _LoaderHandle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LoaderHandle */ "./resources/js/components/header/LoaderHandle.js");
-/* harmony import */ var _HeaderNavbarHandle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeaderNavbarHandle */ "./resources/js/components/header/HeaderNavbarHandle.js");
-
 
 
 
 var Header = function Header() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_HeaderNavbarHandle__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoaderHandle__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoaderHandle__WEBPACK_IMPORTED_MODULE_1__["default"], null);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./resources/js/components/order/index.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/order/index.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var OrderInputHandle = function OrderInputHandle() {
+  var $selectedId = $('input[name="instance-id"]').val();
+  var $inputToMark = $('input[type="radio"][value="' + $selectedId + '"]');
+  $inputToMark.attr('checked', true);
+  return null;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (OrderInputHandle);
 
 /***/ }),
 
@@ -35715,10 +35708,10 @@ var Cart = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/OneProductForm.js":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/pages/OneProductForm.js ***!
-  \*********************************************************/
+/***/ "./resources/js/components/pages/OneProduct/AddToCartButton.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/pages/OneProduct/AddToCartButton.js ***!
+  \*********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -35726,26 +35719,255 @@ var Cart = /*#__PURE__*/function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 
 
-var OneProductForm = function OneProductForm() {
-  var checkSelectedHandle = function checkSelectedHandle(e) {
-    var size = document.querySelector('input[name="selected_size"]:checked');
 
-    if (size === null) {
-      e.preventDefault();
-      alert('You must select size');
-    }
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+var AddToCartButton = function AddToCartButton(props) {
+  var button = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
-    onClick: checkSelectedHandle,
+    onClick: props.checkSelectedHandle,
     className: "btn btn-info mt-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-cart-plus mr-3"
   }), "Add to cart");
+  return react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(button, document.getElementById('add-to-cart-button'));
 };
+
+/* harmony default export */ __webpack_exports__["default"] = (AddToCartButton);
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/OneProduct/Slider.js":
+/*!************************************************************!*\
+  !*** ./resources/js/components/pages/OneProduct/Slider.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Slider; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var Slider = /*#__PURE__*/function (_Component) {
+  _inherits(Slider, _Component);
+
+  var _super = _createSuper(Slider);
+
+  function Slider(props) {
+    var _this;
+
+    _classCallCheck(this, Slider);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      images: [],
+      currentKey: null,
+      leftKey: 0,
+      rightKey: 0
+    };
+    return _this;
+  }
+
+  _createClass(Slider, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var values = $('.slider-image').map(function () {
+        return this.value;
+      }).get();
+      this.setState({
+        images: values,
+        currentKey: 0
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevState.currentKey !== this.state.currentKey) {
+        var leftKey = this.state.currentKey - 1 >= 0 ? this.state.currentKey - 1 : this.state.images.length - 1;
+        var rightKey = this.state.currentKey + 1 <= this.state.images.length - 1 ? this.state.currentKey + 1 : 0;
+        this.setState({
+          leftKey: leftKey,
+          rightKey: rightKey
+        });
+      }
+    }
+  }, {
+    key: "select",
+    value: function () {
+      var _select = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(e) {
+        var key;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                key = parseInt(e.target.dataset.key);
+                console.log(e.target);
+                _context.next = 4;
+                return this.setState({
+                  currentKey: key
+                });
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function select(_x) {
+        return _select.apply(this, arguments);
+      }
+
+      return select;
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var currentPath = '/images/' + this.state.images[this.state.currentKey];
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "main-slider-image"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+        src: currentPath,
+        alt: "Slider image"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        onClick: this.select.bind(this)
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+        className: "fa fa-arrow-left",
+        "data-key": this.state.leftKey
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        onClick: this.select.bind(this)
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+        className: "fa fa-arrow-right",
+        "data-key": this.state.rightKey
+      }))), this.state.images.map(function (img, key) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: "/images/" + img,
+          key: key,
+          "data-key": key,
+          className: "slider-image",
+          onClick: _this2.select.bind(_this2),
+          alt: "Slider image"
+        });
+      }));
+    }
+  }]);
+
+  return Slider;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/OneProduct/index.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/pages/OneProduct/index.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Slider */ "./resources/js/components/pages/OneProduct/Slider.js");
+/* harmony import */ var _AddToCartButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AddToCartButton */ "./resources/js/components/pages/OneProduct/AddToCartButton.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+var OneProductForm = /*#__PURE__*/function (_Component) {
+  _inherits(OneProductForm, _Component);
+
+  var _super = _createSuper(OneProductForm);
+
+  function OneProductForm() {
+    _classCallCheck(this, OneProductForm);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(OneProductForm, [{
+    key: "checkSelectedHandle",
+    value: function checkSelectedHandle(e) {
+      var size = document.querySelector('input[name="selected_size"]:checked');
+
+      if (size === null) {
+        e.preventDefault();
+        alert('You must select size');
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddToCartButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        checkSelectedHandle: this.checkSelectedHandle
+      }));
+    }
+  }]);
+
+  return OneProductForm;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (OneProductForm);
 
@@ -35764,12 +35986,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Size_Sizes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Size/Sizes */ "./resources/js/components/products/Size/Sizes.js");
 /* harmony import */ var _Images__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Images */ "./resources/js/components/products/Images.js");
+/* harmony import */ var _TextareaHandle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TextareaHandle */ "./resources/js/components/products/TextareaHandle.js");
+
 
 
 
 
 var AddProduct = function AddProduct() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Size_Sizes__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Images__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Size_Sizes__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Images__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TextareaHandle__WEBPACK_IMPORTED_MODULE_3__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (AddProduct);
@@ -35789,6 +36013,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Size_Sizes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Size/Sizes */ "./resources/js/components/products/Size/Sizes.js");
 /* harmony import */ var _Images__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Images */ "./resources/js/components/products/Images.js");
+/* harmony import */ var _TextareaHandle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TextareaHandle */ "./resources/js/components/products/TextareaHandle.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
@@ -35827,6 +36052,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var EditProduct = /*#__PURE__*/function (_Component) {
   _inherits(EditProduct, _Component);
 
@@ -35842,26 +36068,25 @@ var EditProduct = /*#__PURE__*/function (_Component) {
       sizesFromHtml: {},
       sizesQuantitiy: 0
     };
-
-    _this.checkRadioCategory();
-
     return _this;
   }
 
   _createClass(EditProduct, [{
-    key: "checkRadioCategory",
-    value: function checkRadioCategory() {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.markCategory();
+      this.preloadSizes();
+      this.preloadImages();
+    }
+  }, {
+    key: "markCategory",
+    value: function markCategory() {
       var $category_id = $('#cat-id').html();
       $('#subcat' + $category_id).attr('checked', true);
     }
   }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.preLoadSizes();
-    }
-  }, {
-    key: "preLoadSizes",
-    value: function preLoadSizes() {
+    key: "preloadSizes",
+    value: function preloadSizes() {
       var _this2 = this;
 
       var values = _toConsumableArray(document.getElementsByClassName('size-value'));
@@ -35883,14 +36108,30 @@ var EditProduct = /*#__PURE__*/function (_Component) {
       });
     }
   }, {
+    key: "preloadImages",
+    value: function preloadImages(dropzone) {
+      if (dropzone !== undefined) {
+        var filenames = $('.image-filename');
+
+        for (var i = 0; i < filenames.length; i++) {
+          var file = {
+            name: filenames[i].value,
+            size: 12345
+          };
+          dropzone.emit('addedfile', file);
+          dropzone.emit('thumbnail', file, 'http://127.0.0.1:8000/images/' + file.name);
+        }
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Size_Sizes__WEBPACK_IMPORTED_MODULE_1__["default"], {
         currentId: this.state.sizesQuantitiy,
         sizes: this.state.sizesFromHtml
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Images__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        preload: true
-      }));
+        preload: this.preloadImages
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TextareaHandle__WEBPACK_IMPORTED_MODULE_3__["default"], null));
     }
   }]);
 
@@ -35950,12 +36191,12 @@ var Images = /*#__PURE__*/function (_Component) {
 
   var _super = _createSuper(Images);
 
-  function Images() {
+  function Images(props) {
     var _this;
 
     _classCallCheck(this, Images);
 
-    _this = _super.call(this);
+    _this = _super.call(this, props);
     _this.state = {
       token: $('meta[name="csrf-token"]').attr('content'),
       dropzone: null
@@ -35967,13 +36208,15 @@ var Images = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: function () {
       var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var component;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 Dropzone.autoDiscover = false;
                 $('#save-button').on('click', this.handleSubmit.bind(this));
-                _context.next = 4;
+                component = this;
+                _context.next = 5;
                 return this.setState({
                   dropzone: new Dropzone(document.getElementById('dropzone'), {
                     maxFilesize: 8,
@@ -36002,10 +36245,13 @@ var Images = /*#__PURE__*/function (_Component) {
                   })
                 });
 
-              case 4:
-                if (this.props.preload) this.preload();
-
               case 5:
+                if (this.props.preload) {
+                  console.log(this.state.dropzone);
+                  this.props.preload(this.state.dropzone);
+                }
+
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -36019,21 +36265,6 @@ var Images = /*#__PURE__*/function (_Component) {
 
       return componentDidMount;
     }()
-  }, {
-    key: "preload",
-    value: function preload() {
-      var files = $('.image-filename');
-
-      for (var i = 0; i < files.length; i++) {
-        var file = {
-          name: files[i].value,
-          size: 12345
-        };
-        this.state.dropzone.emit('addedfile', file);
-        this.state.dropzone.emit('thumbnail', file, 'http://127.0.0.1:8000/images/' + file.name);
-        console.log(file.name);
-      }
-    }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
@@ -36051,12 +36282,12 @@ var Images = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        "for": "dropzone"
+        htmlFor: "dropzone"
       }, "Images"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
         action: "/products/images/upload",
         method: "POST",
         encType: "multipart/form-data",
-        className: "dropzone mt-5",
+        className: "dropzone mt-2",
         id: "dropzone",
         files: "true"
       }));
@@ -36085,8 +36316,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var Form = function Form(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    "for": "size-table",
-    "class": "mb-3"
+    htmlFor: "size-table",
+    className: "mb-3"
   }, "Sizes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     id: "size-table",
     className: "table table mb-5"
@@ -36280,6 +36511,28 @@ var Sizes = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/products/TextareaHandle.js":
+/*!************************************************************!*\
+  !*** ./resources/js/components/products/TextareaHandle.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var TextareaHandle = function TextareaHandle() {
+  CKEDITOR.replace('description');
+  return null;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (TextareaHandle);
 
 /***/ }),
 
