@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use \Illuminate\Database\QueryException;
 use Auth;
 use Session;
 use Illuminate\Http\Request;
@@ -58,15 +59,18 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-      $instance = Product::find($id);
-      $categories = Category::all();
-      $subcategories = SubCategory::all();
-
-      if(Session::has('error')){
-        ProductController::delete_previous_images();
+      try{
+        $instance = Product::find($id);
+        $categories = Category::all();
+        $subcategories = SubCategory::all();
+        if(Session::has('error')){
+          ProductController::delete_previous_images();
+        }
+        return view('products.edit', compact('instance', 'categories', 'subcategories'));
       }
-
-      return view('products.edit', compact('instance', 'categories', 'subcategories'));
+      catch(QueryException $e){
+        return redirect('/')->withErrors('Product not found');
+      }
     }
 
     public function update(Request $req, $id)

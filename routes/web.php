@@ -85,12 +85,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
-
-    Route::get('/admin/products/create', 'ProductController@add');
 });
 
 
-
-Route::fallback(function(){
-    return view('errors.404_not_found');
-});
+//errors
+Route::fallback('ErrorController@_404_not_found');

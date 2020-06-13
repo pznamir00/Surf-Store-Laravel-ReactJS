@@ -19,14 +19,14 @@
     @include('layouts.header')
 
     <main class="py-4">
-        <div class="mt-5 mb-5">
+        <div class="mt-5 mb-5" style="margin-top: 100px;">
           @if(Session::has('errors'))
-            {!! implode('', $errors->all('<div class="btn btn-danger error">:message</div>')) !!}
+            {!! implode('', $errors->all('<div class="btn btn-danger mt-5" style="width: 100%;">:message</div>')) !!}
           @endif
         </div>
-        <div class="mb-5" style="margin-top: 100px;">
+        <div class="mt-5 mb-5" style="margin-top: 100px;">
           @if(session('success'))
-            <div class="btn btn-success" style="width: 100%;">{{ session('success') }}</div>
+            <div class="btn btn-success mt-5" style="width: 100%;">{{ session('success') }}</div>
           @endif
         </div>
         <div style="margin-top: 180px; margin-bottom: 180px;">
