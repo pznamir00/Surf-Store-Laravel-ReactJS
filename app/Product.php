@@ -51,25 +51,17 @@ class Product extends Model
       if($removeds){
         foreach($removeds as $rem){
           $image = Image::where('url', '=', $rem)->first();
-          unlink(public_path('images').'/'.$image->url);
+          $image->del_file();
           $image->delete();
         }
       }
     }
 
-    public function clear_sizes()
-    {
-      $sizes = $this->sizes;
-      foreach($sizes as $size){
-        $size->delete();
-      }
-    }
-
-    public function clear_images()
+    public function delete_images()
     {
       $images = $this->images;
       foreach($images as $img){
-        unlink(public_path('images').'/'.$img->url);
+        $img->del_file();
         $img->delete();
       }
     }

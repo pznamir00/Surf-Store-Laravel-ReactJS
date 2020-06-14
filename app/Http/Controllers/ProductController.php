@@ -88,6 +88,7 @@ class ProductController extends Controller
       $product->category_id = $req->input('category_id');
       $product->price = $req->input('price');
       $product->save();
+
       //sizes and images
       $product->delete_sizes();
       $product->create_sizes($req->input('size_values'), $req->input('size_quantities'));
@@ -101,8 +102,8 @@ class ProductController extends Controller
     {
       $id = $request->input('product_id');
       $product = Product::find($id);
-      $product->clear_sizes();
-      $product->clear_images();
+      $product->delete_sizes();
+      $product->delete_images();
       $product->delete();
       return redirect('/')->with('success', 'Deleted product');
     }
