@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\SubmitEmail;
+use Mail;
 
 class ContactController extends Controller
 {
@@ -16,18 +15,28 @@ class ContactController extends Controller
     public function submit_message(Request $request)
     {
       $this->validate($request, [
-        'email' => 'required|email',
-        'subject' => 'required',
-        'content' => 'required|max:255'
+          'email' => 'required|email',
+          'subject' => 'required',
+          'message' => 'required',
       ]);
 
-      $data = array(
-        'email' => $request->input('email'),
-        'subject' => $request->input('subject'),
-        'content' => $request->input('content')
-      );
+      try{
+        $data = array(
+          'email' => $request->email,
+          'subject' => $request->subject,
+          '_message' => $request->message,
+          'app_name' => config('app.name'),
+          'app_mail' => config('mail.username'),
+        );
 
-      Mail::to('example@gmail.com')->send(new SubmitEmail($data));
-      return back()->with('success', 'Thanks for your ask');
+        Mail::send('contact.message', $data, function($message) use ($data){
+          $message->from($data['app_mail'], $data['email']);
+          $message->to($data['app_mail'], 'To '.$data['app_name'])->subject($data['subject']);
+        });
+        return redirect('/')->with('success', 'Successful sent message');
+      }
+      catch(Exception $e){
+        return redirect('/')->with('error', 'Failed to submit your message');
+      }
     }
 }

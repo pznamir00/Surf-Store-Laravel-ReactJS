@@ -7,16 +7,15 @@ use Illuminate\Support\Facades\File;
 
 class Image extends Model
 {
-
-  public function upload($file)
-  {
-    $filename = microtime(true).'.'.$file->getClientOriginalExtension();
-    $file->move(public_path('images'), $filename);
-    $this->url = $filename;
+  public function upload($file){
+    $this->url = microtime(true).'.'.$file->getClientOriginalExtension();
+    $file->move(public_path('images'), $this->url);
   }
 
-  public function del_file()
-  {
-    File::delete('images/'.$this->url);
+  public static function boot() {
+    parent::boot();
+    static::deleting(function($img) {
+      File::delete('images/'.$img->url);
+    });
   }
 }

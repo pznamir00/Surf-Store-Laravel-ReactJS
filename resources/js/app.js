@@ -5,8 +5,8 @@ import Header from './components/header/index.js';
 import AddProduct from './components/products/AddProduct';
 import EditProduct from './components/products/EditProduct';
 import OneProductForm from './components/pages/OneProduct/index';
-import Cart from './components/pages/Cart';
-import OrderInputHandle from './components/order/index';
+import Cart from './components/pages/Cart/index';
+import { OrderInputHandle } from './components/order/index';
 
 
 class App extends Component {
@@ -19,8 +19,7 @@ class App extends Component {
               <Route path='/products/edit/:id' component={EditProduct} />
               <Route path='/products/:id' component={OneProductForm} />
               <Route path='/cart' component={Cart} />
-              <Route path='/order/delivery' component={OrderInputHandle} />
-              <Route path='/order/payment' component={OrderInputHandle} />
+              <Route path='/order/(delivery|payment)' component={OrderInputHandle} />
             </Switch>
           </Router>
           </div>
@@ -30,12 +29,7 @@ class App extends Component {
 
 
 //header
-ReactDOM.render(
-  <React.StrictMode>
-    <Header />
-  </React.StrictMode>,
-  document.getElementById('header-root')
-);
+ReactDOM.render(<Header/>, document.getElementById('header-root'));
 
 //main
 if(document.getElementById('root')){

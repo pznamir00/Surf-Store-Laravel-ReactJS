@@ -17,11 +17,11 @@ class CheckAdmin
     public function handle($request, Closure $next)
     {
         if(Auth::check()){
-            if(Auth::user()->admin == false)
+            if(!Auth::user()->hasRole('admin'))
               return redirect('/');
         }
         else return redirect('/');
-        
+
         return $next($request);
     }
 }

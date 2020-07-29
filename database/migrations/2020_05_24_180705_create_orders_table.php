@@ -18,11 +18,14 @@ class CreateOrdersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
+            $table->string('phone');
             $table->string('street');
             $table->string('home_number');
             $table->string('city');
             $table->string('zipcode');
-            $table->decimal('total');
+            $table->decimal('total')->nullable();
+            $table->unsignedBigInteger('payment_id')->nullable();
+            $table->unsignedBigInteger('delivery_id')->nullable();
             $table->timestamps();
         });
     }

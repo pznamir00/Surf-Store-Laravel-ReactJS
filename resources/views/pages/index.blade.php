@@ -4,9 +4,8 @@
 
 @section('content')
 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/pages/index.css') }}"/>
-
 <section class="mt-5">
+  <h1 class="ml-5 mb-5">Newest products:</h1>
   @if($products->isEmpty())
     <h4>Not found results</h4>
   @endif
@@ -14,11 +13,12 @@
   <div class="container">
     <div class="row">
       @foreach($products as $product)
-        <a href="{{ route('one_product', $product->id) }}" class="product col-6 col-lg-4 col-xl-3">
+        <a href="{{ route('one_product', $product->id) }}" class="product col-6 col-lg-4 col-xl-3 mb-2">
           @if(count($product->images))
             <img src="{{ asset('images').'/'.$product->images[0]->url }}" alt="{{$product->title}}"/>
           @endif
           <strong>{{$product->title}}</strong>
+          <p class="mt-2">{{$product->price}}</p>
         </a>
         <br/>
       @endforeach

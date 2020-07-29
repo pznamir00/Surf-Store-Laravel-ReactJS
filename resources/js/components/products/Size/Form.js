@@ -17,8 +17,8 @@ const Form = (props) => {
           { Object.entries(props.sizes).map((size,key) =>
             <tr key={key} onChange={props.update}>
               <td>{key + 1}</td>
-              <td><input className="form-control" data-title={size[0]} type="text" value={size[1].val} name="size_values[]"/></td>
-              <td><input className="form-control" data-title={size[0]} type="number" value={size[1].qty} name="size_quantities[]" min="1"/></td>
+              <td><input className="form-control" data-title={size[0]} type="text" defaultValue={size[1].val} name="size_values[]"/></td>
+              <td><input className="form-control" data-title={size[0]} type="number" defaultValue={size[1].qty} name="size_quantities[]" min="1"/></td>
               <td><button className="form-control" data-title={size[0]} type="button" onClick={props.removeRow}>Remove</button></td>
             </tr>
           )}

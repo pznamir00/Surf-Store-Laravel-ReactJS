@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Sizes from './Size/Sizes';
 import Images from './Images';
-import TextareaHandle from './TextareaHandle';
+import { TextareaHandle } from './TextareaHandle';
 
 
 
-class EditProduct extends Component {
+export default class EditProduct extends Component {
 
     constructor(){
       super();
@@ -16,13 +16,9 @@ class EditProduct extends Component {
     }
 
     componentDidMount(){
-      this.markCategory();
       this.preloadSizes();
       this.preloadImages();
-    }
-
-    markCategory(){
-      let $category_id = $('#cat-id').html();
+      const $category_id = $('#cat-id').html();
       $('#subcat' + $category_id).attr('checked', true);
     }
 
@@ -44,14 +40,9 @@ class EditProduct extends Component {
 
     preloadImages(dropzone){
       if(dropzone !== undefined){
-        const filenames = $('.image-filename');
-        for(var i=0; i<filenames.length; i++)
-        {
-            var file = {
-              name: filenames[i].value,
-              size: 12345,
-            };
-
+        const $filenames = $('.image-filename');
+        for(let i=0; i<$filenames.length; i++) {
+            const file = { name: $filenames[i].value, size: 12345 };
             dropzone.emit('addedfile', file);
             dropzone.emit('thumbnail', file, 'http://127.0.0.1:8000/images/' + file.name);
         }
@@ -73,6 +64,3 @@ class EditProduct extends Component {
       );
     }
 }
-
-
-export default EditProduct;

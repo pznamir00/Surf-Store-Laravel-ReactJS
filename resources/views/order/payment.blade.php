@@ -2,8 +2,6 @@
 @section('title', 'Payment')
 @section('content')
 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/cart/payment.css') }}"/>
-
 <h3>Select payment method</h3>
 
 {!! Form::open(['method'=>'POST', 'action'=>'OrderController@payment', 'class'=>'mt-5']) !!}

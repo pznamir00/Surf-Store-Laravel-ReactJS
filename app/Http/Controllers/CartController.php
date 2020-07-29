@@ -15,7 +15,6 @@ class CartController extends Controller
     {
       $cart = Session::get('cart');
       $products = array();
-
       foreach($cart->items as $i){
         array_push($products, [
           'product' => Product::find($i['product id']),
@@ -38,11 +37,9 @@ class CartController extends Controller
         Session::get('cart')->add(request('product_id'), request('selected_size'));
       }
       else{
-        //first item: set cart session variable
-        $cart = new Cart(request('product_id'), request('selected_size'));
+        $cart = new Cart(request('product_id'), request('selected_size')); //first item: set cart session variable
         Session::put('cart', $cart);
       }
-
       return redirect('/')->with('success', 'Product added to cart');
     }
 

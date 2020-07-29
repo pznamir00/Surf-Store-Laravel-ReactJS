@@ -1,0 +1,136 @@
+@import '../../../sass/_variables';
+
+
+#sidebar{
+  position: fixed;
+  top: 0;
+  padding-top: 70px;
+  right: 0px;
+  width: 400px;
+  height: 100vh;
+  background: #fff;
+  border-left: 1px groove $bg-color-dark;
+
+  .category{
+    width: 100%;
+    border-top: solid 1px $bg-color-dark;
+    border-bottom: solid 1px $bg-color-dark;
+    margin-top: -1px;
+  }
+
+  a{
+    color: $dark-gray;
+    display: block;
+    text-align: left;
+    margin-left: 30px;
+    &:hover{
+      text-decoration: none;
+      opacity: $h-level;
+    }
+  }
+
+  #hamburger{
+    position: fixed;
+    right: 3px;
+    top: 3px;
+    z-index: 100000;
+  }
+
+  .search-panel{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #sidebar-categories{
+    margin-top: 50px;
+    width: 100%;
+
+    h6{
+      color: #aaa;
+      margin-left: 20px;
+      text-align: center;
+      &:after{
+        content: "\25bc";
+        font-size: 10px;
+        float: right;
+        margin-right: 15px;
+      }
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    a{
+      display: block;
+      color: $dark-gray;
+      &:hover{
+        text-decoration: none;
+        opacity: $h-level;
+      }
+    }
+
+    .s_category{
+      padding-top: 6px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #ddd;
+      width: 100%;
+      div{
+        margin-left: 35px;
+      }
+    }
+  }
+}
+
+#loader-background{
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99999;
+}
+
+.loader{
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+  width: 150px;
+  height: 150px;
+  border: solid 0 transparent;
+  border-radius: 50%;
+
+  &:before, &:after{
+    content: '';
+    border: solid 1em $special-color;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: loader 2s linear infinite;
+    -moz-animation: loader 2s linear infinite;
+    animation: loader 2s linear infinite;
+  }
+
+  &:before{
+    animation-delay: .5s;
+  }
+}
+
+
+@keyframes loader {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 0;
+  }
+}

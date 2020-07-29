@@ -4,5 +4,17 @@
 // Variables
 @import 'variables';
 
+//own styles
+@import 'cart/delivery',
+        'cart/payment',
+        'cart/summary',
+        'errors/_404',
+        'layouts/header',
+        'layouts/main',
+        'layouts/footer',
+        'pages/cart',
+        'pages/index',
+        'pages/one_product';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';

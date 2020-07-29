@@ -1,0 +1,21 @@
+@import 'variables';
+
+html, body{
+  font-family: $content-font;
+  background-color: $bg-color;
+}
+
+main{
+  width: 85%;
+  margin: auto;
+  min-height: 870px;
+}
+
+.error{
+  width: 300px;
+  margin: 10px;
+}
+
+.fa{
+  padding: 10px !important;
+}

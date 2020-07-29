@@ -1,29 +1,27 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from './Slider';
 import AddToCartButton from './AddToCartButton';
+import './style.scss';
 
 
-class OneProductForm extends Component {
-
-  checkSelectedHandle(e){
-    const size = document.querySelector('input[name="selected_size"]:checked');
-    if(size === null){
+const OneProductForm = () => {
+  const [valid, setValid] = useState(true);
+  const submitHandle = e => {
+    if(!document.querySelector('input[name="selected_size"]:checked')){
       e.preventDefault();
-      alert('You must select size');
+      setValid(false);
     }
   }
-
-  render(){
-    return (
-        <React.Fragment>
-          <Slider/>
-          <AddToCartButton checkSelectedHandle={this.checkSelectedHandle}/>
-        </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+      <Slider/>
+      <AddToCartButton
+        valid={valid}
+        submitHandle={submitHandle}
+      />
+    </React.Fragment>
+  );
 }
-
-
 
 
 export default OneProductForm;

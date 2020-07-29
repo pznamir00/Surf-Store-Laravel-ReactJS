@@ -16,9 +16,9 @@ class CheckCart
      */
     public function handle($request, Closure $next)
     {
-        if(!Session::has('cart'))
-          return redirect('/');
+      if(!Session::has('cart'))
+        return redirect('/');
 
-        return $next($request);
+      return $next($request);
     }
 }

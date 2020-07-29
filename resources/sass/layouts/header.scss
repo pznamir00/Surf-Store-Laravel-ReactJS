@@ -1,0 +1,24 @@
+@import 'variables';
+
+header{
+  position: fixed;
+  width: 100vw;
+  z-index: 4;
+
+  .navbar-brand{
+    font-family: $special-font !important;
+    color: $dark-gray;
+  }
+
+  #header-options{
+    a{
+      margin-left: 5px;
+      margin-right: 5px;
+      color: $dark-gray;
+      &:hover{
+        text-decoration: none;
+        opacity: $h-level;
+      }
+    }
+  }
+}

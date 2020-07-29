@@ -11,4 +11,8 @@ class SubCategory extends Model
       'slug',
       'base_category_id',
     ];
+
+    public function base_category(){
+      return $this->belongsTo('App\Category');
+    }
 }

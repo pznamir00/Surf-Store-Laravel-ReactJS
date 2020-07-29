@@ -21,11 +21,8 @@ class CreateSizesTable extends Migration
           $table->timestamps();
       });
 
-      Schema::table('sizes', function($table)
-      {
-          $table->foreign('product_id')
-              ->references('id')->on('products')
-              ->onDelete('cascade');
+      Schema::table('sizes', function($table){
+          $table->foreign('product_id')->references('id')->on('products');
       });
     }
 

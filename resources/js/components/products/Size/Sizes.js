@@ -27,18 +27,11 @@ export default class Sizes extends Component {
   }
 
   async handleUpdate(e) {
-    const rowName = e.target.dataset.title;
-    const type = e.target.type;
-    const value = e.target.value;
-    var sizes = this.state.sizes;
-
-    console.log(rowName)
-
-    if(type == "text")
-      sizes[rowName].val = value;
-    else
-      sizes[rowName].qty = value;
-
+    const { title } = e.target.dataset;
+    const { type, value } = e.target;
+    var { sizes } = this.state;
+    if(type == "text") sizes[title].val = value;
+    else sizes[title].qty = value;
     await this.setState({
       sizes: sizes,
     });

@@ -1,30 +1,44 @@
 <footer>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/footer.css') }}"/>
-
-  <div id="footer-categories">
-    <h3>Categories</h3>
+  <div class="f-site">
+    <h4>Site</h4>
+    <a href="/"><i class="fa fa-home"></i>Home</a>
+    <a href="{{ route('contact') }}"><i class="fa fa-envelope"></i>Contact</a>
+    <a href="/about-us"><i class="fa fa-info mr-1"></i>About us</a>
+  </div>
+  <hr>
+  <div class="f-auth">
+    <h4>User</h4>
+    @guest
+      <a href="{{ route('login') }}"><i class="fa fa-user"></i>Login</a>
+      <a href="{{ route('register') }}"><i class="fa fa-sign-in"></i>Register</a>
+    @else
+      <a href="{{ route('home') }}"><i class="fa fa-user"></i>Your account</a>
+    @endguest
+    <a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i>Your cart</a>
+  </div>
+  <hr>
+  <div class="f-cats">
+    <h4>Categories</h4>
     @foreach($footerCategories as $cat)
-      <div class="mt-3">
-        <strong>{{$cat->title}}</strong>
+      <div class="mt-3 ml-4">
+        <h6>{{$cat->title}}</h6>
         <ul class="list-group">
           @foreach($cat->subcategories as $subcat)
-            <a href="{{ 'products/'.$cat->slug.'/'.$subcat->slug }}"><li class="footer-list-item">{{$subcat->title}}</li></a>
+            <a class="list-item" href="{{ 'products/'.$cat->slug.'/'.$subcat->slug }}"><li>{{$subcat->title}}</li></a>
           @endforeach
         </ul>
       </div>
     @endforeach
   </div>
-  <div id="footer-user">
-    <h3>User</h3>
-    @guest
-      <a href="{{ route('register') }}" class="nav-link">Register</a>
-      <a href="{{ route('login') }}" class="nav-link">Login</a>
-    @else
-      <a href="{{ route('home') }}"><i class="fa fa-user mr-3"></i>Your account</a>
-    @endguest
-    <a href="{{ route('cart') }}"><i class="fa fa-shopping-cart mr-3"></i>Your cart</a>
+  <div class="medias">
+    <a href="#" class="mx-md-4"><i class="fa fa-facebook h3"></i></a>
+    <a href="#" class="mx-md-4"><i class="fa fa-instagram h3"></i></a>
+    <a href="#" class="mx-md-4"><i class="fa fa-github h3"></i></a>
+    <a href="#" class="mx-md-4"><i class="fa fa-google-plus h3"></i></a>
+    <a href="#" class="mx-md-4"><i class="fa fa-linkedin h3"></i></a>
+    <a href="#" class="mx-md-4"><i class="fa fa-youtube h3"></i></a>
   </div>
-  <div id="footer-copyright">
+  <div class="f-copyright">
     <span>All rights reserved &copy</span>
   </div>
 </footer>

@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->text('title')->unique();
             $table->text('description');
-            $table->boolean('active');
+            $table->boolean('active')->default(1)->nullable();
             $table->decimal('price');
             $table->integer('category_id');
             $table->timestamps();

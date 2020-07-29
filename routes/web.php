@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@index');
 
+//layouts
+Route::get('/data/categories', 'PageController@get_categories');
+
 
 
 //products
@@ -26,6 +29,8 @@ Route::middleware('admin')->group(function(){
   Route::get('/products/edit/{id}', 'ProductController@edit')->name('edit_product');
 
   Route::delete('/products/delete', 'ProductController@delete')->name('delete_product');
+
+  Route::post('/products/images/upload', 'ImageController@create_single_image');
 });
 
 Route::get('/products/search', 'PageController@keywords');
@@ -33,8 +38,6 @@ Route::get('/products/search', 'PageController@keywords');
 Route::get('/products/{category}/{subcategory}', 'PageController@categories')->name('categories');
 
 Route::get('/products/{id}', 'PageController@one_product')->name('one_product');
-
-Route::post('/products/images/upload', 'ProductController@create_image');
 
 
 

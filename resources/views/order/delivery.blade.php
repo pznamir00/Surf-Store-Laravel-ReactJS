@@ -2,8 +2,6 @@
 @section('title', 'Delivery')
 @section('content')
 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/cart/delivery.css') }}"/>
-
 <h3>Select delivery</h3>
 
 {!! Form::open(['method'=>'POST', 'action'=>'OrderController@delivery', 'class'=>'mt-5']) !!}

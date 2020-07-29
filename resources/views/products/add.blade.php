@@ -26,12 +26,10 @@
       @foreach($categories as $cat)
         <div class="ml-5">
           <h6>{{$cat->title}}</h6>
-            @foreach($subcategories as $subcat)
-              @if($subcat->base_category_id == $cat->id)
+            @foreach($cat->subcategories as $subcat)
                 <input type="radio" id="subcat{{$subcat->id}}" name="category_id" value="{{$subcat->id}}"/>
                 <label for="subcat{{$subcat->id}}">{{$subcat->title}}</label>
                 <br/>
-              @endif
             @endforeach
         </div>
       @endforeach

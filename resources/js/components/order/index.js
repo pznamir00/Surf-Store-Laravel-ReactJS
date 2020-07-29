@@ -1,13 +1,11 @@
 import React from 'react';
 
 
-const OrderInputHandle = () => {
-
-  var $selectedId = $('input[name="instance-id"]').val();
-  var $inputToMark = $('input[type="radio"][value="' + $selectedId + '"]');
-  $inputToMark.attr('checked', true);
-  return null;
+export const OrderInputHandle = () => {
+  var selectedId = document.querySelector('input[name="instance-id"]').value;
+  var inputToMark = document.querySelector('input[type="radio"][value="' + selectedId + '"]');
+  inputToMark.setAttribute('checked', true);
+  return (
+    null
+  );
 }
-
-
-export default OrderInputHandle;

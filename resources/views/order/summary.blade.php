@@ -2,8 +2,6 @@
 @section('title', 'Summary')
 @section('content')
 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/cart/summary.css') }}"/>
-
 <h3>Summary your order</h3>
 
 <table class="table table mt-5">
