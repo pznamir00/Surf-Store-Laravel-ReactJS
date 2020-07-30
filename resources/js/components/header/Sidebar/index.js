@@ -22,7 +22,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     const $sb = $('#sidebar');
-    const r = display ? '0px' : '-400px';
+    const r = display ? '0px' : '-300px';
     $sb.animate({ right: r }, 200);
   }, [display]);
 

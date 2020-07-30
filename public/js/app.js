@@ -1998,7 +1998,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n#sidebar {\n  position: fixed;\n  top: 0;\n  padding-top: 70px;\n  right: 0px;\n  width: 400px;\n  height: 100vh;\n  background: #fff;\n  border-left: 1px groove #d6dada;\n}\n#sidebar .category {\n  width: 100%;\n  border-top: solid 1px #d6dada;\n  border-bottom: solid 1px #d6dada;\n  margin-top: -1px;\n}\n#sidebar a {\n  color: #2f3033;\n  display: block;\n  text-align: left;\n  margin-left: 30px;\n}\n#sidebar a:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n#sidebar #hamburger {\n  position: fixed;\n  right: 3px;\n  top: 3px;\n  z-index: 100000;\n}\n#sidebar .search-panel {\n  width: 90%;\n  margin-left: auto;\n  margin-right: auto;\n}\n#sidebar #sidebar-categories {\n  margin-top: 50px;\n  width: 100%;\n}\n#sidebar #sidebar-categories h6 {\n  color: #aaa;\n  margin-left: 20px;\n  text-align: center;\n}\n#sidebar #sidebar-categories h6:after {\n  content: \"\\25BC\";\n  font-size: 10px;\n  float: right;\n  margin-right: 15px;\n}\n#sidebar #sidebar-categories h6:hover {\n  cursor: pointer;\n}\n#sidebar #sidebar-categories a {\n  display: block;\n  color: #2f3033;\n}\n#sidebar #sidebar-categories a:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n#sidebar #sidebar-categories .s_category {\n  padding-top: 6px;\n  padding-bottom: 6px;\n  border-bottom: 1px solid #ddd;\n  width: 100%;\n}\n#sidebar #sidebar-categories .s_category div {\n  margin-left: 35px;\n}\n\n#loader-background {\n  background: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  z-index: 99999;\n}\n\n.loader {\n  position: absolute;\n  top: calc(50vh - 75px);\n  left: calc(50vw - 75px);\n  width: 150px;\n  height: 150px;\n  border: solid 0 transparent;\n  border-radius: 50%;\n}\n.loader:before, .loader:after {\n  content: \"\";\n  border: solid 1em #5174e8;\n  border-radius: 50%;\n  width: inherit;\n  height: inherit;\n  position: absolute;\n  top: 0;\n  left: 0;\n  -webkit-animation: loader 2s linear infinite;\n  animation: loader 2s linear infinite;\n}\n.loader:before {\n  -webkit-animation-delay: 0.5s;\n          animation-delay: 0.5s;\n}\n\n@-webkit-keyframes loader {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n}\n\n@keyframes loader {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n#sidebar {\n  position: fixed;\n  top: 0;\n  padding-top: 70px;\n  right: 0px;\n  width: 300px;\n  height: 100vh;\n  background: #fff;\n  border-left: 1px groove #d6dada;\n}\n#sidebar .category {\n  width: 100%;\n  border-top: solid 1px #d6dada;\n  border-bottom: solid 1px #d6dada;\n  margin-top: -1px;\n}\n#sidebar a {\n  color: #2f3033;\n  display: block;\n  text-align: left;\n  margin-left: 30px;\n}\n#sidebar a:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n#sidebar #hamburger {\n  position: fixed;\n  right: 3px;\n  top: 3px;\n  z-index: 100000;\n}\n#sidebar .search-panel {\n  width: 90%;\n  margin-left: auto;\n  margin-right: auto;\n}\n#sidebar #sidebar-categories {\n  margin-top: 50px;\n  width: 100%;\n}\n#sidebar #sidebar-categories h6 {\n  color: #aaa;\n  margin-left: 20px;\n  text-align: center;\n}\n#sidebar #sidebar-categories h6:after {\n  content: \"\\25BC\";\n  font-size: 10px;\n  float: right;\n  margin-right: 15px;\n}\n#sidebar #sidebar-categories h6:hover {\n  cursor: pointer;\n}\n#sidebar #sidebar-categories a {\n  display: block;\n  color: #2f3033;\n}\n#sidebar #sidebar-categories a:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n#sidebar #sidebar-categories .s_category {\n  padding-top: 6px;\n  padding-bottom: 6px;\n  border-bottom: 1px solid #ddd;\n  width: 100%;\n}\n#sidebar #sidebar-categories .s_category div {\n  margin-left: 35px;\n}\n\n#loader-background {\n  background: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  z-index: 99999;\n}\n\n.loader {\n  position: absolute;\n  top: calc(50vh - 75px);\n  left: calc(50vw - 75px);\n  width: 150px;\n  height: 150px;\n  border: solid 0 transparent;\n  border-radius: 50%;\n}\n.loader:before, .loader:after {\n  content: \"\";\n  border: solid 1em #5174e8;\n  border-radius: 50%;\n  width: inherit;\n  height: inherit;\n  position: absolute;\n  top: 0;\n  left: 0;\n  -webkit-animation: loader 2s linear infinite;\n  animation: loader 2s linear infinite;\n}\n.loader:before {\n  -webkit-animation-delay: 0.5s;\n          animation-delay: 0.5s;\n}\n\n@-webkit-keyframes loader {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n}\n\n@keyframes loader {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n}", ""]);
 
 // exports
 
@@ -47246,7 +47246,7 @@ var Sidebar = function Sidebar() {
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     var $sb = jquery__WEBPACK_IMPORTED_MODULE_5___default()('#sidebar');
-    var r = display ? '0px' : '-400px';
+    var r = display ? '0px' : '-300px';
     $sb.animate({
       right: r
     }, 200);
@@ -47582,6 +47582,8 @@ var Slider = /*#__PURE__*/function (_Component) {
 
       var currentPath = '/images/' + this.state.images[this.state.currentKey];
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        "class": "mb-5 pb-5"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "main-slider-image"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
         src: currentPath,
@@ -47605,7 +47607,7 @@ var Slider = /*#__PURE__*/function (_Component) {
           onClick: _this2.select.bind(_this2),
           alt: "Slider image"
         });
-      }));
+      })));
     }
   }]);
 
