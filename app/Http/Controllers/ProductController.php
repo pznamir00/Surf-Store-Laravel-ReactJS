@@ -49,7 +49,8 @@ class ProductController extends Controller
     public function update(ProductRequest $request, $id)
     {
       $request->validated();
-      $product = Product::find($id)->update($request->all());
+      $product = Product::find($id)
+      $product->update($request->all());
       $product->delete_sizes();
       $product->create_sizes($request->size_values, $request->size_quantities);
       app('App\Http\Controllers\ImageController')->delete_removed_images($request->removed);

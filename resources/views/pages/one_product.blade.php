@@ -50,11 +50,11 @@
 <div class="mb-5 pb-5">
   @if(Auth::check())
     @if(Auth::user()->hasRole('admin'))
-      <a href="{{ route('edit_product', $product->id) }}" class="btn btn-primary operation"><i class="fa fa-pencil-square-o mr-3"></i>Edit</a>
+      <a href="{{ route('edit_product', $product->id) }}" class="btn btn-primary operation"><i class="fa fa-pencil-square-o"></i>Edit</a>
       {!! Form::open(['action'=>'ProductController@delete', 'method'=>'DELETE']) !!}
         @csrf
         {{Form::hidden('product_id', $product->id)}}
-        <button class="btn btn-danger m-1"><i class="fa fa-trash mr-3"></i>Delete</button>
+        <button class="btn btn-danger m-1"><i class="fa fa-trash"></i>Delete</button>
       {!! Form::close() !!}
     @endif
   @endif

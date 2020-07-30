@@ -47,23 +47,22 @@ export default class Slider extends Component {
     const currentPath = '/images/' + this.state.images[this.state.currentKey];
     return (
       <React.Fragment>
-
-        <div className="main-slider-image" >
-          <img src={currentPath} alt="Slider image"/>
-          <div onClick={this.select.bind(this)}>
-            <i className="fa fa-arrow-left" data-key={this.state.leftKey}></i>
+	<div class="mb-5 pb-5">
+          <div className="main-slider-image" >
+            <img src={currentPath} alt="Slider image"/>
+            <div onClick={this.select.bind(this)}>
+              <i className="fa fa-arrow-left" data-key={this.state.leftKey}></i>
+            </div>
+            <div onClick={this.select.bind(this)}>
+              <i className="fa fa-arrow-right" data-key={this.state.rightKey}></i>
+            </div>
           </div>
-          <div onClick={this.select.bind(this)}>
-            <i className="fa fa-arrow-right" data-key={this.state.rightKey}></i>
-          </div>
-        </div>
-
-        {this.state.images.map((img, key) => {
-          return (
-            <img src={"/images/" + img} key={key} data-key={key} className="slider-image" onClick={this.select.bind(this)} alt="Slider image"/>
-          )
-        })}
-
+          {this.state.images.map((img, key) => {
+            return (
+              <img src={"/images/" + img} key={key} data-key={key} className="slider-image" onClick={this.select.bind(this)} alt="Slider image"/>
+            )
+          })}
+	</div>
       </React.Fragment>
     );
   }

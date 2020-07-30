@@ -9,6 +9,10 @@
           <a href="{{ route('register') }}"><i class="fa fa-sign-in"></i>Registration</a>
         @else
           <a href="{{ route('home') }}"><i class="fa fa-user"></i>Profile</a>
+          @if(Auth::user()->hasRole('admin'))
+            <a href="/admin"><i class="fa fa-server"></i>Admin panel</a>
+            <a href="/products/add"><i class="fa fa-plus"></i>Add product</a>
+          @endif
         @endguest
         <a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i>Cart</a>
       </div>
