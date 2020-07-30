@@ -17,19 +17,6 @@
     <a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i>Your cart</a>
   </div>
   <hr>
-  <div class="f-cats">
-    <h4>Categories</h4>
-    @foreach($footerCategories as $cat)
-      <div class="mt-3 ml-4">
-        <h6>{{$cat->title}}</h6>
-        <ul class="list-group">
-          @foreach($cat->subcategories as $subcat)
-            <a class="list-item" href="{{ 'products/'.$cat->slug.'/'.$subcat->slug }}"><li>{{$subcat->title}}</li></a>
-          @endforeach
-        </ul>
-      </div>
-    @endforeach
-  </div>
   <div class="medias">
     <a href="#" class="mx-md-4"><i class="fa fa-facebook h3"></i></a>
     <a href="#" class="mx-md-4"><i class="fa fa-instagram h3"></i></a>
