@@ -1,15 +1,9 @@
 @extends('layouts.app')
 
-@section('title', '| Home')
+@section('title', '| Products')
 
 @section('content')
-
-<section >
-  <div id="background-index"></div>
-</section>
-
-<section class="mt-5 pt-5">
-  <h3 class="ml-2 mb-5 ">Newest products:</h3>
+<section class="mt-5">
   @if($products->isEmpty())
     <h4>Not found results</h4>
   @endif

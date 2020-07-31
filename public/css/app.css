@@ -183,6 +183,16 @@ input[type=number] {
   opacity: 0.8;
 }
 
+#background-index {
+  background-image: url(/media/static/background.jpg);
+  background-repeat: no-repeat;
+  width: calc(100vw - 16px);
+  margin-left: -7.5vw;
+  background-size: contain;
+  padding-top: 66.64%;
+  margin-top: -150px;
+}
+
 #cat_a {
   color: #5174e8;
 }

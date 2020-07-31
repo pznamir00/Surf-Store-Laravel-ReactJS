@@ -22,7 +22,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     const $sb = $('#sidebar');
-    const r = display ? '0px' : '-300px';
+    const r = display ? '0px' : '-400px';
     $sb.animate({ right: r }, 200);
   }, [display]);
 
@@ -32,7 +32,6 @@ const Sidebar = () => {
           <span className="fa fa-bars"></span>
       </button>
       <AuthOptionsHandle/>
-      <hr/>
       <form method="GET" action="/products/search" className="form-inline d-flex justify-content-center md-form form-sm mt-0 search-panel">
         <i className="fa fa-search" aria-hidden="true"></i>
         <input name="keywords" className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"/>
