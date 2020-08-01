@@ -146,20 +146,21 @@ input[type=number] {
 
 .product {
   display: inline-block;
-  width: 270px;
-  height: 340px;
   padding: 10px;
   text-align: center;
   overflow: hidden;
 }
 
-.product img {
-  width: 250px;
-  height: 250px;
-  margin-bottom: 10px;
+.product div {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.product div:after {
+  content: "";
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  padding-bottom: 100%;
 }
 
 .product strong {

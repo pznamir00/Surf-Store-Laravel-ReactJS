@@ -22,7 +22,7 @@ const Cart = () => {
   }, []);
 
   useEffect(() => {
-    axios.put('/cart/change-size-quantity', {
+    axios.put('/data/cart/size', {
         sizeId: sizeId,
         quantity: quantity,
     });

@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
-    <title>Online shop @yield('title')</title>
+    <title>Surf Store @yield('title')</title>
 </head>
 <body>
     @include('layouts.header')

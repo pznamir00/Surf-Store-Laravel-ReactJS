@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+
 
 class HomeController extends Controller
 {
 
-    function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         return view('account.index');
+    }
+
+    public function close_account()
+    {
+        Auth::user()->delete();
+        return redirect('/')->with('success', 'Your account was deleted successfuly');
     }
 }

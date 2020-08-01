@@ -7,6 +7,7 @@ import EditProduct from './components/products/EditProduct';
 import OneProductForm from './components/pages/OneProduct/index';
 import Cart from './components/pages/Cart/index';
 import { OrderInputHandle } from './components/order/index';
+import AccountDelete from './components/pages/Account/index';
 
 
 class App extends Component {
@@ -15,10 +16,11 @@ class App extends Component {
           <div className="container">
           <Router>
             <Switch>
+              <Route exact path='/home' component={AccountDelete} />
               <Route path='/products/add' component={AddProduct} />
               <Route path='/products/edit/:id' component={EditProduct} />
               <Route path='/products/:id' component={OneProductForm} />
-              <Route path='/cart' component={Cart} />
+              <Route exact path='/cart' component={Cart} />
               <Route path='/order/(delivery|payment)' component={OrderInputHandle} />
             </Switch>
           </Router>

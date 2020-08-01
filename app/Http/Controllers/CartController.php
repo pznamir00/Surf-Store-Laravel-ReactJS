@@ -10,7 +10,6 @@ use Session;
 
 class CartController extends Controller
 {
-
     public function index()
     {
       $cart = Session::get('cart');
@@ -25,7 +24,6 @@ class CartController extends Controller
 
       return view('pages.cart', compact('products'));
     }
-
 
 
     public function add_to_cart()
@@ -44,7 +42,6 @@ class CartController extends Controller
     }
 
 
-
     public function delete_from_cart(Request $request)
     {
       $key = $request->input('key');
@@ -53,22 +50,9 @@ class CartController extends Controller
     }
 
 
-
     public function clear()
     {
       Session::forget('cart');
       return redirect('/')->with('success', 'Cleart cart');
-    }
-
-
-    public function change_size(Request $req)
-    {
-      $data = $req->all();
-      foreach(Session::get('cart')->items as $key=>$item){
-        if($item['size id'] == $data['sizeId']){
-          Session::get('cart')->items[$key]['quantity'] = $data['quantity'];
-        }
-      }
-      return response()->json('success');
     }
 }

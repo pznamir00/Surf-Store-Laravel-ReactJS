@@ -1,0 +1,26 @@
+#delete-account-confirm-form{
+  position: fixed;
+  top: 200px;
+  width: 300px;
+  height: 200px;
+  left: calc(50vw - 150px);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: #eee;
+  padding: 10px;
+  z-index: 100002;
+
+  @media(max-width: 800px){
+    top: 100px;
+  }
+}
+
+#cover{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100001;
+}

@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//account
+Auth::routes();
+
+//index
 Route::get('/', 'PageController@index');
 
 //layouts
-Route::get('/data/categories', 'PageController@get_categories');
+Route::get('/data/categories', 'DataAjaxController@get_categories');
 
 
 
@@ -31,6 +35,12 @@ Route::middleware('admin')->group(function(){
   Route::delete('/products/delete', 'ProductController@delete')->name('delete_product');
 
   Route::post('/products/images/upload', 'ImageController@create_single_image');
+});
+
+Route::middleware('auth')->group(function(){
+  Route::get('/home', 'HomeController@index')->name('home');
+
+  Route::post('/home/account/close', 'HomeController@close_account')->name('close_account');
 });
 
 Route::get('/products/search', 'PageController@keywords');
@@ -65,7 +75,7 @@ Route::middleware('cart')->group(function(){
 
   Route::post('/order/summary', 'OrderController@make_order');
 
-  Route::put('/cart/change-size-quantity', 'CartController@change_size');
+  Route::put('/data/cart/size', 'DataAjaxController@change_size');
 
   Route::post('/cart/make-order', 'OrderController@make_order');
 });
@@ -80,12 +90,7 @@ Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contact', 'ContactController@submit_message');
 
 
-
-//account
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
+//voyager
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

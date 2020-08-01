@@ -2,19 +2,20 @@
 
 .product{
   display: inline-block;
-  width: 270px;
-  height: 340px;
   padding: 10px;
   text-align: center;
   overflow: hidden;
 
-  img{
-    width: 250px;
-    height: 250px;
-    margin-bottom: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  div{
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &:after{
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
   }
 
   strong{
