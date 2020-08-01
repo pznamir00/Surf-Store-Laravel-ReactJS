@@ -47180,7 +47180,7 @@ var CategoryHandle = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function
       "data-list_key": key
     }, cat.subcategories.map(function (sCat, sKey) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/products/" + cat.title + "/" + sCat.title,
+        href: "/products/" + cat.slug + "/" + sCat.slug,
         key: sKey
       }, sCat.title);
     })));
@@ -47504,7 +47504,6 @@ var AccountDelete = function AccountDelete() {
 
   var submitHandle = function submitHandle(e) {
     var nick = e.target.nick;
-    console.log(nick.value, nickname);
 
     if (nick.value !== nickname.current) {
       e.preventDefault();

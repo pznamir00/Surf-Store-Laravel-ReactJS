@@ -26,7 +26,7 @@ export const CategoryHandle = memo(({categories}) => {
           <h6 data-title_key={key} onClick={catClickHandle}>{cat.title}</h6>
           <div data-list_key={key}>
             {cat.subcategories.map((sCat, sKey) =>
-              <a href={"/products/"+cat.title+"/"+sCat.title} key={sKey}>{sCat.title}</a>
+              <a href={"/products/"+cat.slug+"/"+sCat.slug} key={sKey}>{sCat.title}</a>
             )}
           </div>
         </div>

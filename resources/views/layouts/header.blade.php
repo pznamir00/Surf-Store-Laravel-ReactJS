@@ -13,6 +13,10 @@
             <a href="/admin"><i class="fa fa-server"></i>Admin panel</a>
             <a href="/products/add"><i class="fa fa-plus"></i>Add product</a>
           @endif
+          <a class="btn btn-default p-0" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('_logout-form_').submit();">
+              <i class="fa fa-sign-out"></i>Sign out
+          </a>
+          <form id="_logout-form_" action="{{ route('logout') }}" method="POST" hidden>@csrf</form>
         @endguest
         <a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i>Cart</a>
       </div>
