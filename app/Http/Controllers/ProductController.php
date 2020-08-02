@@ -54,7 +54,7 @@ class ProductController extends Controller
       $product->delete_sizes();
       $product->create_sizes($request->size_values, $request->size_quantities);
       app('App\Http\Controllers\ImageController')->delete_removed_images($request->removed);
-      app('App\Http\Controllers\ImageController')->set_new_added_images($new_product->id);
+      app('App\Http\Controllers\ImageController')->set_new_added_images($product->id);
       return redirect('/')->with('success', 'Product edited successfully');
     }
 
