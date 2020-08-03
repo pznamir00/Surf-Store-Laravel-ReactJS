@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
+use Config;
 
 class ContactController extends Controller
 {
@@ -26,7 +27,7 @@ class ContactController extends Controller
           'subject' => $request->subject,
           '_message' => $request->message,
           'app_name' => config('app.name'),
-          'app_mail' => config('mail.username'),
+          'app_mail' => env('MAIL_USERNAME', null),
         );
 
         Mail::send('contact.message', $data, function($message) use ($data){

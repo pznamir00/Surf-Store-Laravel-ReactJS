@@ -11,6 +11,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <!-- Account data -------------------------------------------------------------------->
+                        <h5 class="mt-5 mb-4 ml-4">General data</h5>
                         <div class="form-group row">
                             <label for="first_name" class="col-md-4 col-form-label text-md-right">{{ __('First name') }}</label>
 
@@ -53,6 +54,7 @@
                             </div>
                         </div>
 
+                        <h5 class="mt-5 mb-4 ml-4">Your address</h5>
                         <div class="form-group row">
                             <label for="street" class="col-md-4 col-form-label text-md-right">{{ __('Street') }}</label>
 
@@ -110,6 +112,7 @@
                         </div>
                         <!-- User data ----------------------------------------------------------------------->
 
+                        <h5 class="mt-5 mb-4 ml-4">Login data</h5>
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
@@ -160,7 +163,9 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <span style="font-size: 10px; float: right; margin-top: 10px; margin-right: 40px;">All fields are required</span>
+
+                        <div class="form-group row mb-0 mt-4">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}

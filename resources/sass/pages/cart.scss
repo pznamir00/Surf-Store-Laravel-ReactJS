@@ -1,3 +1,13 @@
+#cart-table-container{
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+
+  @media(max-width: 580px){
+    overflow-x: scroll;
+  }
+}
+
 .cart-image{
   display: block;
   width: 30px;

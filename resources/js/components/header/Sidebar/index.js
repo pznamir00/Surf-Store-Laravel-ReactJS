@@ -3,6 +3,7 @@ import { AuthOptionsHandle } from './AuthOptionsHandle';
 import { CategoryHandle } from './CategoryHandle';
 import axios from 'axios';
 import $ from 'jquery';
+import './style.scss';
 
 
 const Sidebar = () => {
@@ -31,11 +32,11 @@ const Sidebar = () => {
       <button id="hamburger" className="navbar-toggler" type="button" onClick={move}>
           <span className="fa fa-bars"></span>
       </button>
-      <AuthOptionsHandle/>
-      <form method="GET" action="/products/search" className="form-inline d-flex justify-content-center md-form form-sm mt-5 search-panel">
+      <form method="GET" action="/products/search" className="form-inline d-flex justify-content-center md-form form-sm mt-3 mb-3 search-panel">
         <i className="fa fa-search" aria-hidden="true"></i>
         <input name="keywords" className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"/>
       </form>
+      <AuthOptionsHandle/>
       <CategoryHandle categories={categories}/>
     </nav>
   );

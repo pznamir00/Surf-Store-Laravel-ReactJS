@@ -3,11 +3,14 @@
 html, body{
   font-family: $content-font;
   background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+  overflow-y: overlay;
 }
 
 main{
-  width: 85%;
   margin: auto;
+  width: 85%;
   min-height: 870px;
 }
 

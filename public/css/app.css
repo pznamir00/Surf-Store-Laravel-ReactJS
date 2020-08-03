@@ -51,6 +51,7 @@ header {
 header .navbar-brand {
   font-family: "Mulish", sans-serif !important;
   color: #2f3033;
+  font-weight: 500;
 }
 
 header #header-options a {
@@ -68,11 +69,14 @@ html,
 body {
   font-family: "Roboto", sans-serif;
   background-color: #f8fafc;
+  margin: 0;
+  padding: 0;
+  overflow-y: overlay;
 }
 
 main {
-  width: 85%;
   margin: auto;
+  width: 85%;
   min-height: 870px;
 }
 
@@ -134,6 +138,18 @@ footer .f-copyright {
   background: #222;
 }
 
+#cart-table-container {
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 580px) {
+  #cart-table-container {
+    overflow-x: scroll;
+  }
+}
+
 .cart-image {
   display: block;
   width: 30px;
@@ -187,11 +203,13 @@ input[type=number] {
 #background-index {
   background-image: url(/media/static/background.jpg);
   background-repeat: no-repeat;
-  width: calc(100vw - 16px);
-  margin-left: -7.5vw;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
   background-size: contain;
   padding-top: 66.64%;
   margin-top: -150px;
+  margin-left: -7.5vw;
 }
 
 #cat_a {

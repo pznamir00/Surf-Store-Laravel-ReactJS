@@ -3,7 +3,6 @@
     <h4>Site</h4>
     <a href="/"><i class="fa fa-home"></i>Home</a>
     <a href="{{ route('contact') }}"><i class="fa fa-envelope"></i>Contact</a>
-    <a href="/about-us"><i class="fa fa-info mr-1"></i>About us</a>
   </div>
   <hr>
   <div class="f-auth">

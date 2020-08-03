@@ -12,8 +12,8 @@
     {{Form::textarea('message', '', ['class'=>'form-control mt-2', 'placeholder'=>'Message'])}}
   </div>
   <div class="form-group mt-5">
-    {!! Form::submit('Save', ['class'=>'btn btn-primary mr-5', 'id'=>'save-button']) !!}
     {!! link_to(URL::previous(), 'Back', ['class'=>'btn btn-default']) !!}
+    {!! Form::submit('Send', ['class'=>'btn btn-primary mr-5', 'id'=>'save-button']) !!}
   </div>
 {!! Form::close() !!}
 
