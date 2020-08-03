@@ -47277,16 +47277,16 @@ var Sidebar = function Sidebar() {
       right: r
     }, 200);
   }, [display]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
-    id: "sidebar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     id: "hamburger",
     className: "navbar-toggler",
     type: "button",
     onClick: move
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     className: "fa fa-bars"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+    id: "sidebar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
     method: "GET",
     action: "/products/search",
     className: "form-inline d-flex justify-content-center md-form form-sm mt-3 mb-3 search-panel"
@@ -47301,7 +47301,7 @@ var Sidebar = function Sidebar() {
     "aria-label": "Search"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_AuthOptionsHandle__WEBPACK_IMPORTED_MODULE_2__["AuthOptionsHandle"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_CategoryHandle__WEBPACK_IMPORTED_MODULE_3__["CategoryHandle"], {
     categories: categories
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
