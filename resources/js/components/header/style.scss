@@ -1,6 +1,15 @@
 @import '../../../sass/_variables';
 
 
+
+#hamburger{
+  position: fixed !important;
+  right: 3px !important;
+  top: 3px !important;
+  z-index: 9999999 !important;
+}
+
+
 #sidebar{
   position: fixed;
   top: 0;
@@ -35,13 +44,6 @@
       text-decoration: none;
       opacity: $h-level;
     }
-  }
-
-  #hamburger{
-    position: fixed !important;
-    right: 3px !important;
-    top: 3px !important;
-    z-index: 9999999 !important;
   }
 
   .search-panel{
