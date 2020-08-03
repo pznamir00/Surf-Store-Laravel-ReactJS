@@ -16,7 +16,7 @@
   }
 
   @media(max-height: 620px){
-    overflow-y: scroll;
+    overflow-y: overlay;
   }
 
   .category{
@@ -41,7 +41,7 @@
     position: fixed;
     right: 3px;
     top: 3px;
-    z-index: 100000;
+    z-index: 100001;
   }
 
   .search-panel{
