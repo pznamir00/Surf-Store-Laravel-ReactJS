@@ -1,6 +1,98 @@
 @import '../../../sass/_variables';
 
 
+#sidebar{
+  position: fixed;
+  top: 0;
+  padding-top: 70px;
+  right: 0px;
+  width: 400px;
+  height: 100vh;
+  background: #fff;
+  border-left: 1px groove $bg-color-dark;
+
+  @media(max-width: 900px){
+    width: 300px;
+  }
+
+  @media(max-height: 620px){
+    overflow-y: scroll;
+  }
+
+  .category{
+    width: 100%;
+    border-top: solid 1px $bg-color-dark;
+    border-bottom: solid 1px $bg-color-dark;
+    margin-top: -1px;
+  }
+
+  a{
+    color: $dark-gray;
+    display: block;
+    text-align: left;
+    margin-left: 30px;
+    &:hover{
+      text-decoration: none;
+      opacity: $h-level;
+    }
+  }
+
+  #hamburger{
+    position: fixed;
+    right: 3px;
+    top: 3px;
+    z-index: 100001;
+  }
+
+  .search-panel{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #sidebar-categories{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+
+    h6{
+      color: #888;
+      margin-left: 20px;
+      font-family: $special-font;
+      font-weight: bold;
+      text-align: left;
+      &:after{
+        content: "\25bc";
+        font-size: 10px;
+        float: right;
+        margin-right: 15px;
+      }
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    a{
+      display: block;
+      color: $dark-gray;
+      &:hover{
+        text-decoration: none;
+        opacity: $h-level;
+      }
+    }
+
+    .s_category{
+      padding-top: 6px;
+      padding-bottom: 6px;
+      width: 100%;
+      div{
+        margin-left: 35px;
+      }
+    }
+  }
+}
+
+
 #loader-background{
   background: #fff;
   position: fixed;

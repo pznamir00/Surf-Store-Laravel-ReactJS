@@ -1986,25 +1986,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/header/Sidebar/style.scss":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/components/header/Sidebar/style.scss ***!
-  \**********************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "@charset \"UTF-8\";\n#sidebar {\n  position: fixed;\n  top: 0;\n  padding-top: 70px;\n  right: 0px;\n  width: 400px;\n  height: 100vh;\n  background: #fff;\n  border-left: 1px groove #d6dada;\n}\n@media (max-width: 900px) {\n  #sidebar {\n    width: 300px;\n  }\n}\n@media (max-height: 620px) {\n  #sidebar {\n    overflow-y: scroll;\n  }\n}\n#sidebar .category {\n  width: 100%;\n  border-top: solid 1px #d6dada;\n  border-bottom: solid 1px #d6dada;\n  margin-top: -1px;\n}\n#sidebar a {\n  color: #2f3033;\n  display: block;\n  text-align: left;\n  margin-left: 30px;\n}\n#sidebar a:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n#sidebar #hamburger {\n  position: fixed;\n  right: 3px;\n  top: 3px;\n  z-index: 100001;\n}\n#sidebar .search-panel {\n  width: 90%;\n  margin-left: auto;\n  margin-right: auto;\n}\n#sidebar #sidebar-categories {\n  margin-top: 50px;\n  margin-bottom: 50px;\n  width: 100%;\n}\n#sidebar #sidebar-categories h6 {\n  color: #888;\n  margin-left: 20px;\n  font-family: \"Mulish\", sans-serif;\n  font-weight: bold;\n  text-align: left;\n}\n#sidebar #sidebar-categories h6:after {\n  content: \"\\25BC\";\n  font-size: 10px;\n  float: right;\n  margin-right: 15px;\n}\n#sidebar #sidebar-categories h6:hover {\n  cursor: pointer;\n}\n#sidebar #sidebar-categories a {\n  display: block;\n  color: #2f3033;\n}\n#sidebar #sidebar-categories a:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n#sidebar #sidebar-categories .s_category {\n  padding-top: 6px;\n  padding-bottom: 6px;\n  width: 100%;\n}\n#sidebar #sidebar-categories .s_category div {\n  margin-left: 35px;\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/header/style.scss":
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/components/header/style.scss ***!
@@ -2017,7 +1998,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#loader-background {\n  background: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  z-index: 99999;\n}\n\n.loader {\n  position: absolute;\n  top: calc(50vh - 75px);\n  left: calc(50vw - 75px);\n  width: 150px;\n  height: 150px;\n  border: solid 0 transparent;\n  border-radius: 50%;\n}\n.loader:before, .loader:after {\n  content: \"\";\n  border: solid 1em #5174e8;\n  border-radius: 50%;\n  width: inherit;\n  height: inherit;\n  position: absolute;\n  top: 0;\n  left: 0;\n  -webkit-animation: loader 2s linear infinite;\n  animation: loader 2s linear infinite;\n}\n.loader:before {\n  -webkit-animation-delay: 0.5s;\n          animation-delay: 0.5s;\n}\n\n@-webkit-keyframes loader {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n}\n\n@keyframes loader {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n#sidebar {\n  position: fixed;\n  top: 0;\n  padding-top: 70px;\n  right: 0px;\n  width: 400px;\n  height: 100vh;\n  background: #fff;\n  border-left: 1px groove #d6dada;\n}\n@media (max-width: 900px) {\n  #sidebar {\n    width: 300px;\n  }\n}\n@media (max-height: 620px) {\n  #sidebar {\n    overflow-y: scroll;\n  }\n}\n#sidebar .category {\n  width: 100%;\n  border-top: solid 1px #d6dada;\n  border-bottom: solid 1px #d6dada;\n  margin-top: -1px;\n}\n#sidebar a {\n  color: #2f3033;\n  display: block;\n  text-align: left;\n  margin-left: 30px;\n}\n#sidebar a:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n#sidebar #hamburger {\n  position: fixed;\n  right: 3px;\n  top: 3px;\n  z-index: 100001;\n}\n#sidebar .search-panel {\n  width: 90%;\n  margin-left: auto;\n  margin-right: auto;\n}\n#sidebar #sidebar-categories {\n  margin-top: 50px;\n  margin-bottom: 50px;\n  width: 100%;\n}\n#sidebar #sidebar-categories h6 {\n  color: #888;\n  margin-left: 20px;\n  font-family: \"Mulish\", sans-serif;\n  font-weight: bold;\n  text-align: left;\n}\n#sidebar #sidebar-categories h6:after {\n  content: \"\\25BC\";\n  font-size: 10px;\n  float: right;\n  margin-right: 15px;\n}\n#sidebar #sidebar-categories h6:hover {\n  cursor: pointer;\n}\n#sidebar #sidebar-categories a {\n  display: block;\n  color: #2f3033;\n}\n#sidebar #sidebar-categories a:hover {\n  text-decoration: none;\n  opacity: 0.8;\n}\n#sidebar #sidebar-categories .s_category {\n  padding-top: 6px;\n  padding-bottom: 6px;\n  width: 100%;\n}\n#sidebar #sidebar-categories .s_category div {\n  margin-left: 35px;\n}\n\n#loader-background {\n  background: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  z-index: 99999;\n}\n\n.loader {\n  position: absolute;\n  top: calc(50vh - 75px);\n  left: calc(50vw - 75px);\n  width: 150px;\n  height: 150px;\n  border: solid 0 transparent;\n  border-radius: 50%;\n}\n.loader:before, .loader:after {\n  content: \"\";\n  border: solid 1em #5174e8;\n  border-radius: 50%;\n  width: inherit;\n  height: inherit;\n  position: absolute;\n  top: 0;\n  left: 0;\n  -webkit-animation: loader 2s linear infinite;\n  animation: loader 2s linear infinite;\n}\n.loader:before {\n  -webkit-animation-delay: 0.5s;\n          animation-delay: 0.5s;\n}\n\n@-webkit-keyframes loader {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n}\n\n@keyframes loader {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n}", ""]);
 
 // exports
 
@@ -47227,8 +47208,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.scss */ "./resources/js/components/header/Sidebar/style.scss");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_6__);
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -47246,7 +47225,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -47327,36 +47305,6 @@ var Sidebar = function Sidebar() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
-
-/***/ }),
-
-/***/ "./resources/js/components/header/Sidebar/style.scss":
-/*!***********************************************************!*\
-  !*** ./resources/js/components/header/Sidebar/style.scss ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./style.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/header/Sidebar/style.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
 
 /***/ }),
 

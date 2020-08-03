@@ -3,7 +3,6 @@ import { AuthOptionsHandle } from './AuthOptionsHandle';
 import { CategoryHandle } from './CategoryHandle';
 import axios from 'axios';
 import $ from 'jquery';
-import './style.scss';
 
 
 const Sidebar = () => {
