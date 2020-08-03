@@ -38,10 +38,10 @@
   }
 
   #hamburger{
-    position: fixed;
-    right: 3px;
-    top: 3px;
-    z-index: 100001;
+    position: fixed !important;
+    right: 3px !important;
+    top: 3px !important;
+    z-index: 9999999 !important;
   }
 
   .search-panel{
