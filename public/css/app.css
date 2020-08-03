@@ -278,10 +278,12 @@ input[type=number] {
 
 .fa-arrow-left {
   float: left;
+  z-index: 3;
 }
 
 .fa-arrow-right {
   float: right;
+  z-index: 3;
 }
 
 @media (max-width: 800px) {
