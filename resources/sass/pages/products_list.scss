@@ -1,0 +1,43 @@
+@import 'variables';
+
+
+#filters{
+  position: fixed;
+  width: 90vw;
+  max-width: 700px;
+  height: 80vh;
+  top: 10vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 20px;
+  z-index: 100002;
+  background-color: #fff;
+  border: solid 0px #fff;
+  border-radius: 10px;
+  overflow-y: scroll;
+  transform: scale(0);
+
+  #delete-filters{
+    margin-top: -45px;
+  }
+
+  .color-sqrt{
+    width: 10px;
+    height: 10px;
+  }
+
+  label{
+    font-weight: bold;
+  }
+
+  select{
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid $special-color;
+  }
+
+  .filter-header, button[type="submit"]{
+    color: $special-color;
+  }
+}

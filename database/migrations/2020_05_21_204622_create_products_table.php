@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->boolean('active')->default(1)->nullable();
             $table->decimal('price');
-            $table->integer('category_id');
+            $table->unsignedBigInteger('sub_category_id');
             $table->timestamps();
         });
     }

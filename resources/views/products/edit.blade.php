@@ -18,21 +18,28 @@
       {{Form::number('price', $instance->price, ['step'=>'0.01', 'class'=>'form-control'])}}
     </div>
 
+    <div class="form-group">
+      <label for="colors-input">Color</label>
+      <select id="colors-input" name="color_id" class="form-control">
+        <option value="none">None</option>
+        @foreach($colors as $color)
+          <option value="{{ $color->id }}" {{ $instance->color == $color ? 'selected' : '' }}>{{ $color->name }}</option>
+        @endforeach
+      </select>
+      <br>
+      <label for="producents-input">Producent</label>
+      <select id="producents-input" name="producent_id" class="form-control">
+        <option value="none">None</option>
+        @foreach($producents as $producent)
+          <option value="{{ $producent->id }}" {{ $instance->producent == $producent ? 'selected' : '' }}>{{ $producent->name }}</option>
+        @endforeach
+      </select>
+    </div>
+
     <hr>
 
     <div class="form-group mt-5">
-      <div id="cat-id" hidden>{{$instance->category_id}}</div>
-      {{Form::label('Category')}}
-      @foreach($categories as $cat)
-        <div class="ml-5">
-          <h6>{{$cat->title}}</h6>
-            @foreach($cat->subcategories as $subcat)
-                <input type="radio" id="subcat{{$subcat->id}}" name="category_id" value="{{$subcat->id}}"/>
-                <label for="subcat{{$subcat->id}}">{{$subcat->title}}</label>
-                <br/>
-            @endforeach
-        </div>
-      @endforeach
+      <div id="cat-id" hidden>{{$instance->sub_category_id}}</div>
     </div>
 
     <hr>
@@ -40,7 +47,7 @@
     <div class="form-group">
       <div>
         @foreach($instance->sizes as $size)
-          <input type="hidden" class="size-value" value="{{$size->value}}"/>
+          <input type="hidden" class="size-id" value="{{$size->size->id}}"/>
           <input type="hidden" class="size-qty" value="{{$size->quantity}}"/>
         @endforeach
       </div>

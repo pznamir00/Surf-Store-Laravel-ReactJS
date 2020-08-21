@@ -1,44 +1,40 @@
-import React, { Component } from 'react';
-import Sizes from './Size/Sizes';
+import React, { useState, useEffect } from 'react';
+import Sizes from './Size/index';
 import Images from './Images';
+import Categories from './Categories/index';
 import { TextareaHandle } from './TextareaHandle';
 
 
 
-export default class EditProduct extends Component {
+const EditProduct = () => {
 
-    constructor(){
-      super();
-      this.state = {
-        sizesFromHtml: {},
-        sizesQuantitiy: 0,
-      };
+    const [categoryId, setCategoryId] = useState(1);
+    const [sizesFromHtml, setSizesFromHtml] = useState(null);
+
+    const changeCategoryHandle = async (e) => {
+      const { value } = e.target;
+      await setCategoryId(value);
+    };
+
+    const preloadCategory = () => {
+      setTimeout(() => {
+        const categoryId = document.getElementById('cat-id').innerHTML;
+        let subcategory = document.getElementById('subcategory_' + categoryId);
+        subcategory.checked = true;
+        setCategoryId(subcategory.value);
+      }, 1500);
     }
 
-    componentDidMount(){
-      this.preloadSizes();
-      this.preloadImages();
-      const $category_id = $('#cat-id').html();
-      $('#subcat' + $category_id).attr('checked', true);
-    }
-
-    preloadSizes(){
-      var values = [...document.getElementsByClassName('size-value')];
-      var quantities = [...document.getElementsByClassName('size-qty')];
-      let curr = 0;
-      values.forEach((size) => {
-        this.state.sizesFromHtml['s'+curr] = {
-          val: size.value,
-          qty: quantities[this.state.sizesQuantitiy].value,
-        };
-        this.setState({
-          sizesQuantitiy: this.state.sizesQuantitiy++,
+    const preloadSizes = () => {
+      setTimeout(() => {
+        [...document.querySelectorAll('.size-id')].forEach(function(i, index){
+          const qty = document.querySelectorAll('.size-qty')[index].value;
+          $('#size_input_' + i.value).val(qty);
         });
-        curr++;
-      });
+      }, 2000);
     }
 
-    preloadImages(dropzone){
+    const preloadImages = (dropzone) => {
       if(dropzone !== undefined){
         const $filenames = $('.image-filename');
         for(let i=0; i<$filenames.length; i++) {
@@ -49,18 +45,25 @@ export default class EditProduct extends Component {
       }
     }
 
-    render(){
-      return (
-          <React.Fragment>
-            <Sizes
-              currentId={this.state.sizesQuantitiy}
-              sizes={this.state.sizesFromHtml}
-            />
-            <Images
-              preload={this.preloadImages}
-            />
-            <TextareaHandle/>
-          </React.Fragment>
-      );
-    }
+    useEffect(() => {
+      preloadCategory();
+      preloadSizes();
+      preloadImages();
+    }, []);
+
+    return (
+        <React.Fragment>
+          <Categories changeCategoryHandle={changeCategoryHandle}/>
+          <Sizes
+            categoryId={categoryId}
+          />
+          <Images
+            preload={preloadImages}
+          />
+          <TextareaHandle/>
+        </React.Fragment>
+    );
 }
+
+
+export default EditProduct;

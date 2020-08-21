@@ -12,30 +12,21 @@ class CartController extends Controller
 {
     public function index()
     {
-      $cart = Session::get('cart');
-      $products = array();
-      foreach($cart->items as $i){
-        array_push($products, [
-          'product' => Product::find($i['product id']),
-          'size' => Size::find($i['size id']),
-          'qty' => $i['quantity'],
-        ]);
-      }
-
-      return view('pages.cart', compact('products'));
+      return view('pages.cart');
     }
 
 
     public function add_to_cart()
     {
-      if(!request()->has('product_id') || !request()->has('selected_size'))
+      if(!request()->has('product_id') || !request()->has('size_id'))
         return redirect('/');
 
       if(Session::has('cart')){
-        Session::get('cart')->add(request('product_id'), request('selected_size'));
+        Session::get('cart')->add(request('product_id'), request('size_id'));
       }
       else{
-        $cart = new Cart(request('product_id'), request('selected_size')); //first item: set cart session variable
+        $cart = new Cart();
+        $cart->add(request('product_id'), request('size_id'));
         Session::put('cart', $cart);
       }
       return redirect('/')->with('success', 'Product added to cart');

@@ -1,34 +1,34 @@
-import React from 'react';
+import React, { memo } from 'react';
 
+const Form = memo(({ availableSizes }) => {
+  const content = !document.querySelector('input[name="sub_category_id"]:checked') ?
+  <strong className="mb-5"><i className="fa fa-info"></i>You must select category</strong> :
+  <table className="table">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Value</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      {availableSizes &&
+        availableSizes.map((size, key) =>
+        <tr key={key}>
+          <td>{key+1}</td>
+          <td>{size.value}</td>
+          <td><input type="number" id={'size_input_'+size.id} name="sizesQuantity[]" className="form-control" min="0"/></td>
+        </tr>
+      )}
+    </tbody>
+  </table>
 
-const Form = (props) => {
   return (
     <React.Fragment>
-      <label htmlFor="size-table" className="mb-3">Sizes</label>
-      <table id="size-table" className="table table mb-5">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Value</th>
-            <th>Quantity</th>
-          </tr>
-        </thead>
-        <tbody>
-          { Object.entries(props.sizes).map((size,key) =>
-            <tr key={key} onChange={props.update}>
-              <td>{key + 1}</td>
-              <td><input className="form-control" data-title={size[0]} type="text" defaultValue={size[1].val} name="size_values[]"/></td>
-              <td><input className="form-control" data-title={size[0]} type="number" defaultValue={size[1].qty} name="size_quantities[]" min="1"/></td>
-              <td><button className="form-control" data-title={size[0]} type="button" onClick={props.removeRow}>Remove</button></td>
-            </tr>
-          )}
-          <tr>
-            <td><button className="form-control" onClick={props.addRow} type="button">Add</button></td>
-          </tr>
-        </tbody>
-      </table>
+      <h4>Sizes</h4>
+      <div>{content}</div>
     </React.Fragment>
   );
-}
+});
 
 export default Form;

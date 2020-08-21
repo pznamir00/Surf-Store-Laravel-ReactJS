@@ -14,13 +14,13 @@
         <th>Quantity</th>
         <th></th>
     <thead>
-    @foreach($products as $key => $item)
+    @foreach(session('cart')->items as $key => $item)
       <tr>
         <td><img class="cart-image" src="{{ 'images/'.$item['product']->images[0]->url }}" alt="Cart Img"/></td>
-        <td>{{$item['product']->title}}</td>
-        <td>{{$item['product']->price}}</td>
-        <td>{{$item['size']->value}}</td>
-        <td><input class="form-control" type="number" data-sid="{{$item['size']->id}}" value="{{$item['qty']}}" max="{{$item['size']->quantity}}" min="1"/></td>
+        <td>{{ $item['product']->title }}</td>
+        <td>{{ $item['product']->price }}</td>
+        <td>{{ $item['size']->size->value }}</td>
+        <td><input class="form-control" type="number" data-sid="{{$item['size']->id}}" value="{{$item['quantity']}}" max="{{$item['size']->quantity}}" min="1"/></td>
         <td>
           {!! Form::open(['action'=>'CartController@delete_from_cart', 'method'=>'DELETE']) !!}
             @csrf

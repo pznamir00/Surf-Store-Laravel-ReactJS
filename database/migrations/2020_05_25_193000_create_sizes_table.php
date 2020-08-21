@@ -16,13 +16,8 @@ class CreateSizesTable extends Migration
       Schema::create('sizes', function (Blueprint $table) {
           $table->id();
           $table->string('value');
-          $table->integer('quantity')->unsigned();
-          $table->bigInteger('product_id')->unsigned();
+          $table->bigInteger('sub_category_id')->unsigned();
           $table->timestamps();
-      });
-
-      Schema::table('sizes', function($table){
-          $table->foreign('product_id')->references('id')->on('products');
       });
     }
 

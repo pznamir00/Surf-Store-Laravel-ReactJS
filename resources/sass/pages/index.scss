@@ -51,3 +51,18 @@
   margin-top: -150px;
   margin-left: -7.5vw;
 }
+
+.index-subcategory{
+  overflow: hidden;
+
+  div{
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &:after{
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+}

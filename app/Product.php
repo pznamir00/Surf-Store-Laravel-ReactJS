@@ -2,6 +2,7 @@
 
 namespace App;
 use App\Size;
+use App\SizeRelationship;
 use App\Image;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,28 +12,40 @@ class Product extends Model
       'title',
       'description',
       'price',
-      'category_id'
+      'sub_category_id',
+      'color_id',
+      'producent_id'
     ];
 
     public function sizes(){
-      return $this->hasMany('App\Size');
+      return $this->hasMany('App\SizeRelationship');
     }
 
     public function images(){
       return $this->hasMany('App\Image');
     }
 
-    public function category(){
+    public function sub_category(){
       return $this->belongsTo('App\SubCategory');
     }
 
-    public function create_sizes($values, $quantities){
-      foreach($values as $key=>$val){
-        $size = Size::create([
-          'value' => $val,
-          'quantity' => $quantities[$key],
-          'product_id' => $this->id
-        ]);
+    public function color(){
+      return $this->belongsTo('App\Color');
+    }
+
+    public function producent(){
+      return $this->belongsTo('App\Producent');
+    }
+
+    public function create_sizes($quantities){
+      foreach($quantities as $key => $val){
+        if($val != 0 && $val != ''){
+          SizeRelationship::create([
+            'product_id' => $this->id,
+            'size_id' => ($key + 1),
+            'quantity' => $val
+          ]);
+        }
       }
     }
 

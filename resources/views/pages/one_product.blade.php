@@ -9,8 +9,8 @@
   <h1>{{$product->title}}</h1>
   <hr>
   <strong class="mt-2">
-    <a href="{{ '/products/'.$product->category->base_category->slug.'/'.$product->category->slug }}" id="cat_a">
-      Category<i class="fa fa-long-arrow-right"></i>{{$product->category->base_category->title}}<i class="fa fa-long-arrow-right"></i>{{$product->category->title}}
+    <a href="{{ '/products/'.$product->sub_category->base_category->slug.'/'.$product->sub_category->slug }}" id="cat_a">
+      Category<i class="fa fa-long-arrow-right"></i>{{$product->sub_category->base_category->title}}<i class="fa fa-long-arrow-right"></i>{{$product->sub_category->title}}
     </a>
   </strong>
 </div>
@@ -28,7 +28,7 @@
         <strong>Available sizes:</strong>
         <br>
         @foreach($product->sizes as $size)
-          <label class="size-label"><input type="radio" name="selected_size" value="{{$size->id}}"/><span>{{$size->value}}</span></label>
+          <label class="size-label"><input type="radio" name="size_id" value="{{$size->id}}"/><span>{{$size->size->value}}</span></label>
         @endforeach
       </div>
   </form>

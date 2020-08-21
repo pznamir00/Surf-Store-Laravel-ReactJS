@@ -1,5 +1,55 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.scale-up-center {
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.scale-down-center {
+  -webkit-animation: scale-down-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-down-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes scale-down-center {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes scale-down-center {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
 .delivery-logo {
   height: 40px;
 }
@@ -212,6 +262,26 @@ input[type=number] {
   margin-left: -7.5vw;
 }
 
+.index-subcategory {
+  overflow: hidden;
+}
+
+.index-subcategory div {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.index-subcategory div:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.index-subcategory:hover {
+  text-decoration: none;
+}
+
 #cat_a {
   color: #5174e8;
 }
@@ -230,11 +300,11 @@ input[type=number] {
   float: right;
 }
 
-#add-to-cart-form input[name=selected_size] {
+#add-to-cart-form input[name=size_id] {
   display: none;
 }
 
-#add-to-cart-form input[name=selected_size]:checked + span {
+#add-to-cart-form input[name=size_id]:checked + span {
   color: white;
   background: #5174e8;
 }
@@ -320,6 +390,48 @@ input[type=number] {
 .operation {
   float: left;
   margin: 5px;
+}
+
+#filters {
+  position: fixed;
+  width: 90vw;
+  max-width: 700px;
+  height: 80vh;
+  top: 10vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 20px;
+  z-index: 100002;
+  background-color: #fff;
+  border: solid 0px #fff;
+  border-radius: 10px;
+  overflow-y: scroll;
+  transform: scale(0);
+}
+
+#filters #delete-filters {
+  margin-top: -45px;
+}
+
+#filters .color-sqrt {
+  width: 10px;
+  height: 10px;
+}
+
+#filters label {
+  font-weight: bold;
+}
+
+#filters select {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #5174e8;
+}
+
+#filters .filter-header,
+#filters button[type=submit] {
+  color: #5174e8;
 }
 
 /*!

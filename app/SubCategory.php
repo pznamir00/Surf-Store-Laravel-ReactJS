@@ -19,6 +19,14 @@ class SubCategory extends Model
       return $this->belongsTo('App\Category');
     }
 
+    public function products(){
+      return $this->hasMany('App\Product');
+    }
+
+    public function sizes(){
+      return $this->hasMany('App\Size');
+    }
+
     public static function boot(){
       parent::boot();
       static::creating(function($subcategory) {

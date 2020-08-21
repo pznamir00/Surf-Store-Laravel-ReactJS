@@ -5,7 +5,8 @@
 @import 'variables';
 
 //own styles
-@import 'cart/delivery',
+@import 'animations',
+        'cart/delivery',
         'cart/payment',
         'cart/summary',
         'errors/_404',
@@ -14,7 +15,8 @@
         'layouts/footer',
         'pages/cart',
         'pages/index',
-        'pages/one_product';
+        'pages/one_product',
+        'pages/products_list';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';

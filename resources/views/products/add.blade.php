@@ -19,20 +19,20 @@
       {{Form::number('price', '', ['step'=>'0.01', 'class'=>'form-control'])}}
     </div>
 
-    <hr>
-
-    <div class="form-group mt-5">
-      {{Form::label('Category')}}
-      @foreach($categories as $cat)
-        <div class="ml-5">
-          <h6>{{$cat->title}}</h6>
-            @foreach($cat->subcategories as $subcat)
-                <input type="radio" id="subcat{{$subcat->id}}" name="category_id" value="{{$subcat->id}}"/>
-                <label for="subcat{{$subcat->id}}">{{$subcat->title}}</label>
-                <br/>
-            @endforeach
-        </div>
-      @endforeach
+    <div class="form-group">
+      <label for="colors-input">Color</label>
+      <select id="colors-input" name="color_id" class="form-control">
+        @foreach($colors as $color)
+          <option value="{{ $color->id }}">{{ $color->name }}</option>
+        @endforeach
+      </select>
+      <br>
+      <label for="producents-input">Producent</label>
+      <select id="producents-input" name="producent_id" class="form-control">
+        @foreach($producents as $producent)
+          <option value="{{ $producent->id }}">{{ $producent->name }}</option>
+        @endforeach
+      </select>
     </div>
 
     <hr>

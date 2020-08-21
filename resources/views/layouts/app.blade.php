@@ -27,6 +27,11 @@
             <div class="btn btn-success mt-5" style="width: 100%;">{{ session('success') }}</div>
           @endif
         </div>
+        <div class="mt-5 mb-5" style="margin-top: 100px;">
+          @if(session('info'))
+            <div class="btn btn-info mt-5" style="width: 100%;">{{ session('info') }}</div>
+          @endif
+        </div>
         <div style="margin-top: 180px; margin-bottom: 180px;">
           @yield('content')
         </div>

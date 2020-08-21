@@ -1,13 +1,22 @@
-import React from 'react';
-import Sizes from './Size/Sizes';
+import React, { useState } from 'react';
+import Sizes from './Size/index';
 import Images from './Images';
+import Categories from './Categories/index';
 import { TextareaHandle } from './TextareaHandle';
 
 
 const AddProduct = () => {
+
+    const [categoryId, setCategoryId] = useState(1);
+    const changeCategoryHandle = async (e) => {
+      const { value } = e.target;
+      await setCategoryId(value);
+    };
+
     return (
       <React.Fragment>
-          <Sizes/>
+          <Categories changeCategoryHandle={changeCategoryHandle}/>
+          <Sizes categoryId={categoryId}/>
           <Images/>
           <TextareaHandle/>
       </React.Fragment>

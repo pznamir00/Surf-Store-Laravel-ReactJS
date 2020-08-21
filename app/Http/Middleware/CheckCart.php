@@ -17,7 +17,7 @@ class CheckCart
     public function handle($request, Closure $next)
     {
       if(!Session::has('cart'))
-        return redirect('/');
+        return redirect('/')->with('info', 'Your cart is empty');
 
       return $next($request);
     }

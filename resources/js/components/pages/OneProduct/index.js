@@ -7,7 +7,7 @@ import './style.scss';
 const OneProductForm = () => {
   const [valid, setValid] = useState(true);
   const submitHandle = e => {
-    if(!document.querySelector('input[name="selected_size"]:checked')){
+    if(!document.querySelector('input[name="size_id"]:checked')){
       e.preventDefault();
       setValid(false);
     }

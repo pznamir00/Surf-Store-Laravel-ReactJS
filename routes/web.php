@@ -22,6 +22,8 @@ Route::get('/', 'PageController@index');
 //layouts
 Route::get('/data/categories', 'DataAjaxController@get_categories');
 
+Route::get('/data/categories/{id}/sizes', 'DataAjaxController@get_sizes');
+
 
 
 //products

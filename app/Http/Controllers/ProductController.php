@@ -11,6 +11,8 @@ use App\Category;
 use App\SubCategory;
 use App\Size;
 use App\Image;
+use App\Color;
+use App\Producent;
 
 
 
@@ -19,7 +21,9 @@ class ProductController extends Controller
     public function add()
     {
       $categories = Category::all();
-      return view('products.add', compact('categories'));
+      $colors = Color::all();
+      $producents = Producent::all();
+      return view('products.add', compact('categories', 'colors', 'producents'));
     }
 
 
@@ -27,7 +31,7 @@ class ProductController extends Controller
     {
       $request->validated();
       $new_product = Product::create($request->all());
-      $new_product->create_sizes($request->size_values, $request->size_quantities);
+      $new_product->create_sizes($request->sizesQuantity);
       app('App\Http\Controllers\ImageController')->set_new_added_images($new_product->id);
       return redirect('/')->with('success', 'Product added successfully');
     }
@@ -38,7 +42,9 @@ class ProductController extends Controller
       try{
         $instance = Product::find($id);
         $categories = Category::all();
-        return view('products.edit', compact('instance', 'categories'));
+        $colors = Color::all();
+        $producents = Producent::all();
+        return view('products.edit', compact('instance', 'categories', 'colors', 'producents'));
       }
       catch(QueryException $e){
         return redirect('/')->withErrors('Product not found');
@@ -52,7 +58,7 @@ class ProductController extends Controller
       $product = Product::find($id);
       $product->update($request->all());
       $product->delete_sizes();
-      $product->create_sizes($request->size_values, $request->size_quantities);
+      $product->create_sizes($request->sizesQuantity);
       app('App\Http\Controllers\ImageController')->delete_removed_images($request->removed);
       app('App\Http\Controllers\ImageController')->set_new_added_images($product->id);
       return redirect('/')->with('success', 'Product edited successfully');

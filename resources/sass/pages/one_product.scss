@@ -20,7 +20,7 @@
     float: right;
   }
 
-  input[name="selected_size"]{
+  input[name="size_id"]{
     display: none;
 
     &:checked + span{

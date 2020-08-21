@@ -5,9 +5,11 @@ import Header from './components/header/index.js';
 import AddProduct from './components/products/AddProduct';
 import EditProduct from './components/products/EditProduct';
 import OneProductForm from './components/pages/OneProduct/index';
+import ProductsList from './components/pages/ProductsList/index';
 import Cart from './components/pages/Cart/index';
 import { OrderInputHandle } from './components/order/index';
 import AccountDelete from './components/pages/Account/index';
+import Register from './components/pages/Register/index';
 
 
 class App extends Component {
@@ -17,8 +19,11 @@ class App extends Component {
           <Router>
             <Switch>
               <Route exact path='/home' component={AccountDelete} />
+              <Route path='/register' component={Register} />
               <Route path='/products/add' component={AddProduct} />
               <Route path='/products/edit/:id' component={EditProduct} />
+              <Route path='/products/search' component={ProductsList} />
+              <Route exact path='/products/:cat/:subcat' component={ProductsList} />
               <Route path='/products/:id' component={OneProductForm} />
               <Route exact path='/cart' component={Cart} />
               <Route path='/order/(delivery|payment)' component={OrderInputHandle} />
