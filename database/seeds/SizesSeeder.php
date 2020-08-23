@@ -12,7 +12,7 @@ class SizesSeeder extends Seeder
      */
     public function run()
     {
-        Size::create(
+        Size::create([
           [
             'sub_category_id' => 1,
             'value' => "6'0",
@@ -37,6 +37,6 @@ class SizesSeeder extends Seeder
             'sub_category_id' => 8,
             'value' => "60",
           ]
-        );
+        ]);
     }
 }

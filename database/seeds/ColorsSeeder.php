@@ -13,6 +13,7 @@ class ColorsSeeder extends Seeder
     public function run()
     {
         Color::create([
+        [
           'name' => 'Black',
           'hex_code' => '#000000'
         ],
@@ -44,6 +45,6 @@ class ColorsSeeder extends Seeder
           'name' => 'Brown',
           'hex_code' => '#691b05'
         ]
-      );
+      ]);
     }
 }

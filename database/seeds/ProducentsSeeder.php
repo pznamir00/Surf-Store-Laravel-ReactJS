@@ -12,7 +12,7 @@ class ProducentsSeeder extends Seeder
      */
     public function run()
     {
-        Producent::create(
+        Producent::create([
           [
             'name' => 'Quiksilver'
           ],
@@ -22,6 +22,6 @@ class ProducentsSeeder extends Seeder
           [
             'name' => 'Volcom'
           ]
-        );
+        ]);
     }
 }
