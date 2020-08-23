@@ -13,15 +13,13 @@ class ProducentsSeeder extends Seeder
     public function run()
     {
         Producent::create([
-          [
             'name' => 'Quiksilver'
-          ],
-          [
+          ]);
+        Producent::create([
             'name' => 'Roxy'
-          ],
-          [
+        ]);
+        Producent::create([
             'name' => 'Volcom'
-          ]
         ]);
     }
 }
