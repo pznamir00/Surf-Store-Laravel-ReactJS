@@ -1,27 +1,45 @@
-import React, { useState } from 'react';
-import Sizes from './Size/index';
-import Images from './Images';
-import Categories from './Categories/index';
-import { TextareaHandle } from './TextareaHandle';
+import React from 'react'
+import { SizesContainer } from './Size/index'
+import { ImagesContainer } from './Images'
+import { CategoriesContainer } from './Categories/index'
+import { TextareaHandle } from './TextareaHandle'
+import { connect } from 'react-redux'
+import actions from '../../redux/categorySelected/actions'
 
 
-const AddProduct = () => {
 
-    const [categoryId, setCategoryId] = useState(1);
+
+const AddProduct = props => {
+
     const changeCategoryHandle = async (e) => {
       const { value } = e.target;
-      await setCategoryId(value);
+      await props.change(value);
     };
 
     return (
       <React.Fragment>
-          <Categories changeCategoryHandle={changeCategoryHandle}/>
-          <Sizes categoryId={categoryId}/>
-          <Images/>
+          <CategoriesContainer
+            changeCategoryHandle={changeCategoryHandle}
+          />
+          <SizesContainer
+            categoryId={props.categoryId}
+          />
+          <ImagesContainer/>
           <TextareaHandle/>
       </React.Fragment>
     );
 }
 
 
-export default AddProduct;
+
+const mapStateToProps = (state) => {
+  return {
+    categoryId: state.categorySelected.categoryId
+  }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    change: selected => dispatch(actions.change(selected))
+})
+
+export const AddProductContainer = connect(mapStateToProps, mapDispatchToProps)(AddProduct);

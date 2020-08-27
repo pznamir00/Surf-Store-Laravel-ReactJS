@@ -20,7 +20,7 @@
         <td>{{$item['product']->title}}</td>
         <td>{{$item['product']->price}}</td>
         <td>{{$item['size']->value}}</td>
-        <td>{{$item['qty']}}</td>
+        <td>{{$item['quantity']}}</td>
       </tr>
     @endforeach
   </table>

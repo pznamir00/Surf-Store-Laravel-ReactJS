@@ -1,0 +1,5 @@
+const CATEGORIES_FETCHED = 'CATEGORIES_FETCHED'
+
+export default {
+  CATEGORIES_FETCHED
+}

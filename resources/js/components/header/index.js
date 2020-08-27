@@ -1,13 +1,13 @@
 import React from 'react';
-import { Loader } from './Loader';
-import Sidebar from './Sidebar/index';
+import { Loader } from './Loader/index';
+import { SidebarContainer } from './Sidebar/index';
 import './style.scss';
 
 
 const Header = () => {
   return (
     <React.Fragment>
-      <Sidebar/>
+      <SidebarContainer/>
       <Loader/>
     </React.Fragment>
   );

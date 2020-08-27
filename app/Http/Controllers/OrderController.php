@@ -71,18 +71,10 @@ class OrderController extends Controller
       if(!Session::has('payment_id') || !Session::has('delivery_id'))
         return redirect('cart');
 
-      $products = [];
-      foreach(Session::get('cart')->items as $i){
-        array_push($products, [
-          'product' => Product::find($i['product id']),
-          'size' => Size::find($i['size id']),
-          'qty' => $i['quantity'],
-        ]);
-      }
-
+      $products = session('cart')->items;
       $payment = Payment::find(Session::get('payment_id'));
       $delivery = Delivery::find(Session::get('delivery_id'));
-      $total = Session::get('cart')->count_total();
+      $total = session('cart')->total + Delivery::find(session('delivery_id'))->price;
       return view('order.summary', compact('products', 'payment', 'delivery', 'total'));
     }
 
@@ -93,7 +85,7 @@ class OrderController extends Controller
 
       $cart = session('cart');
       $data = session('order_data');
-      $total = $cart->count_total();
+      $total = $cart->total + Delivery::find(session('delivery_id'))->price;
       $new_order = Order::create($data);
       $new_order->total = $total;
       $new_order->payment_id = session('payment_id');

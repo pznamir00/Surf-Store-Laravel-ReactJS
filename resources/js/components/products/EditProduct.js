@@ -1,35 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import Sizes from './Size/index';
-import Images from './Images';
-import Categories from './Categories/index';
+import React, { useEffect } from 'react';
+import { SizesContainer } from './Size/index';
+import { ImagesContainer } from './Images';
+import { CategoriesContainer } from './Categories/index';
 import { TextareaHandle } from './TextareaHandle';
+import { connect } from 'react-redux'
+import actions from '../../redux/categorySelected/actions'
 
 
 
-const EditProduct = () => {
-
-    const [categoryId, setCategoryId] = useState(1);
-    const [sizesFromHtml, setSizesFromHtml] = useState(null);
+const EditProduct = props => {
 
     const changeCategoryHandle = async (e) => {
       const { value } = e.target;
-      await setCategoryId(value);
+      await props.change(value);
     };
 
     const preloadCategory = () => {
       setTimeout(() => {
         const categoryId = document.getElementById('cat-id').innerHTML;
-        let subcategory = document.getElementById('subcategory_' + categoryId);
+        const subcategory = document.getElementById('subcategory_' + categoryId);
         subcategory.checked = true;
-        setCategoryId(subcategory.value);
+        props.change(subcategory.value);
       }, 1500);
     }
 
     const preloadSizes = () => {
       setTimeout(() => {
-        [...document.querySelectorAll('.size-id')].forEach(function(i, index){
-          const qty = document.querySelectorAll('.size-qty')[index].value;
-          $('#size_input_' + i.value).val(qty);
+        [...document.querySelectorAll('.size-id')].forEach((i, index) => {
+          const quantity = document.querySelectorAll('.size-qty')[index].value;
+          document.getElementById('size_input_' + i.value).value = quantity;
         });
       }, 2000);
     }
@@ -53,11 +52,13 @@ const EditProduct = () => {
 
     return (
         <React.Fragment>
-          <Categories changeCategoryHandle={changeCategoryHandle}/>
-          <Sizes
-            categoryId={categoryId}
+          <CategoriesContainer
+            changeCategoryHandle={changeCategoryHandle}
           />
-          <Images
+          <SizesContainer
+            categoryId={props.categoryId}
+          />
+          <ImagesContainer
             preload={preloadImages}
           />
           <TextareaHandle/>
@@ -66,4 +67,14 @@ const EditProduct = () => {
 }
 
 
-export default EditProduct;
+const mapStateToProps = (state) => {
+  return {
+    categoryId: state.categorySelected.categoryId
+  }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    change: selected => dispatch(actions.change(selected))
+})
+
+export const EditProductContainer = connect(mapStateToProps, mapDispatchToProps)(EditProduct);

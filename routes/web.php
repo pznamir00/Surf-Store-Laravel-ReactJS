@@ -45,9 +45,9 @@ Route::middleware('auth')->group(function(){
   Route::post('/home/account/close', 'HomeController@close_account')->name('close_account');
 });
 
-Route::get('/products/search', 'PageController@keywords');
+Route::get('/products/search', 'FilterController@keywords');
 
-Route::get('/products/{category}/{subcategory}', 'PageController@categories')->name('categories');
+Route::get('/products/{category}/{subcategory}', 'FilterController@categories')->name('categories');
 
 Route::get('/products/{id}', 'PageController@one_product')->name('one_product');
 

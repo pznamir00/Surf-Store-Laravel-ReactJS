@@ -1,0 +1,5 @@
+const AVAILABLE_SIZES_INIT = 'AVAILABLE_SIZES_INIT'
+
+export default {
+  AVAILABLE_SIZES_INIT
+}

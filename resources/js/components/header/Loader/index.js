@@ -1,5 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
+import './style.scss';
+
 
 export const Loader = () => {
   window.onload = () => {

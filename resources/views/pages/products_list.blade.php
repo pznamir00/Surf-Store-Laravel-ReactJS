@@ -37,14 +37,14 @@
                 <div id="priceInput">
                   <label>
                     As
-                    <input type="range" step="0.01" class="custom-range" name="price_as" value="{{ $price['as'] }}" min="0" max="{{ $biggest_price }}"/>
-                    <span id="price_as" class="float-right">{{ $price['as'] }}</span>
+                    <input type="range" step="0.01" class="custom-range" name="price_as" value="{{ $url_data['price']['as'] }}" min="0" max="{{ $url_data['biggest_price'] }}"/>
+                    <span id="price_as" class="float-right">{{ $url_data['price']['as'] }}</span>
                   </label>
                   <br/>
                   <label>
                     To
-                    <input type="range" step="0.01" class="custom-range" name="price_to" value="{{ $price['to'] }}" min="0" max="{{ $biggest_price }}"/>
-                    <span id="price_to" class="float-right">{{ $price['to'] }}</span>
+                    <input type="range" step="0.01" class="custom-range" name="price_to" value="{{ $url_data['price']['to'] }}" min="0" max="{{ $url_data['biggest_price'] }}"/>
+                    <span id="price_to" class="float-right">{{ $url_data['price']['to'] }}</span>
                   </label>
                 </div>
               </div>

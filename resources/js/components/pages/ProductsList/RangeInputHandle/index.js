@@ -1,31 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import actions from '../../../../redux/rangeInput/actions'
 
 
-const RangeInputHandle = () => {
 
-  const [input, setInput] = useState({
-    name: "",
-    value: "",
-  });
+const RangeInputHandle = (props) => {
 
   useEffect(() => {
-    var inputsArray = [...document.querySelectorAll('input[type="range"]')];
+    const inputsArray = [...document.querySelectorAll('input[type="range"]')];
     inputsArray.forEach(function(input){
-      input.addEventListener('change', (e) => setInput({
+      input.addEventListener('change', (e) => props.change({
         name: e.target.name,
-        value: e.target.value,
+        value: e.target.value
       }))
     });
   }, []);
 
   useEffect(() => {
-    if(input.name !== ""){
-      const span = document.getElementById(input.name);
-      span.innerHTML = input.value;
+    if(props.name !== ""){
+      const span = document.getElementById(props.name);
+      span.innerHTML = props.value;
     }
-  }, [input]);
+  }, [props.name]);
 
   return (null);
 }
 
-export default RangeInputHandle;
+
+const mapStateToProps = (state) => {
+  return {
+    name: state.rangeInput.name,
+    value: state.rangeInput.value
+  }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    change: input => dispatch(actions.change(input))
+})
+
+export const RangeInputHandleContainer = connect(mapStateToProps, mapDispatchToProps)(RangeInputHandle);

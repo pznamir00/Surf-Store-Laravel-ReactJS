@@ -1,0 +1,5 @@
+const CATEGORY_CHANGE = 'CATEGORY_CHANGE'
+
+export default {
+  CATEGORY_CHANGE
+}

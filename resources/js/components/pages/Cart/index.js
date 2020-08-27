@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux'
+import actions from '../../../redux/cart/actions'
 import axios from 'axios';
 
 
-const Cart = () => {
-
-  const [sizeId, setSizeId] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+const Cart = (props) => {
 
   const changeQuantityHandle = e => {
     const { value } = e.target;
     const { sid } = e.target.dataset;
-    setSizeId(sid);
-    setQuantity(value);
+    props.sizeIdSelect(sid);
+    props.setQuantity(value);
   };
 
   useEffect(() => {
@@ -23,13 +22,25 @@ const Cart = () => {
 
   useEffect(() => {
     axios.put('/data/cart/size', {
-        sizeId: sizeId,
-        quantity: quantity,
+        sizeId: props.sizeId,
+        quantity: props.quantity,
     });
-  }, [quantity]);
+  }, [props.quantity]);
 
   return null;
 }
 
 
-export default Cart;
+const mapStateToProps = (state) => {
+  return {
+    sizeId: state.cart.sizeId,
+    quantity: state.cart.quantity
+  }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    sizeIdSelect: sizeId => dispatch(actions.sizeIdSelect(sizeId)),
+    setQuantity: quantity => dispatch(actions.setQuantity(quantity))
+})
+
+export const CartContainer = connect(mapStateToProps, mapDispatchToProps)(Cart);

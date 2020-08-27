@@ -1,17 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { DeleteButton } from './DeleteButton';
 import { Alert } from './Alert';
+import { connect } from 'react-redux'
+import actions from '../../../redux/accountDelete/actions'
 import './style.scss';
 
 
-const AccountDelete = () => {
-
-  const [delAlert, setDelAlert] = useState(false);
+const AccountDelete = (props) => {
 
   const nickname = useRef($('#nickname').html());
-
-  const show = () => setDelAlert(true);
-  const hide = () => setDelAlert(false);
+  const show = () => props._switch(true);
+  const hide = () => props._switch(false);
 
   const submitHandle = e => {
     const { nick } = e.target;
@@ -25,7 +24,7 @@ const AccountDelete = () => {
       <DeleteButton
         buttonHandle={show}
       />
-      {delAlert &&
+      {props.alert &&
         <Alert
           nickname={nickname.current}
           focusOut={hide}
@@ -37,4 +36,14 @@ const AccountDelete = () => {
 }
 
 
-export default AccountDelete;
+const mapStateToProps = (state) => {
+  return {
+    alert: state.accountDelete.alert
+  }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    _switch: alert => dispatch(actions._switch(alert))
+})
+
+export const AccountDeleteContainer = connect(mapStateToProps, mapDispatchToProps)(AccountDelete);

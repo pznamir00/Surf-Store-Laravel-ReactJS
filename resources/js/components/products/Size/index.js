@@ -1,42 +1,43 @@
 import React, { Component } from 'react';
 import Form from './Form';
 import axios from 'axios';
+import { connect } from 'react-redux'
+import actions from '../../../redux/addProductSizes/actions'
+
 
 
 export default class Sizes extends Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      categoryId: null,
-      availableSizes: [],
-    };
   }
 
-  static getDerivedStateFromProps(nextProps, prevState){
-    if(nextProps.categoryId !== prevState.categoryId){
-      return{
-        categoryId: nextProps.categoryId,
-      }
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState){
-    if(prevState.categoryId !== this.state.categoryId){
-      axios.get('/data/categories/' + this.state.categoryId + '/sizes')
+  componentDidUpdate(prevProps){
+    if(prevProps.categoryId !== this.props.categoryId){
+      axios.get('/data/categories/' + this.props.categoryId + '/sizes')
       .then(result => result.data)
-      .then(result => {
-        this.setState({
-          availableSizes: result
-        })
-      })
+      .then(result => this.props.init(result))
       .catch(err => console.log(err));
     }
   }
 
   render(){
     return(
-      <Form availableSizes={this.state.availableSizes}/>
+      <Form availableSizes={this.props.availableSizes}/>
     );
   }
 }
+
+
+
+const mapStateToProps = (state) => {
+  return {
+    availableSizes: state.addProductSizes.availableSizes
+  }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    init: availableSizes => dispatch(actions.init(availableSizes))
+})
+
+export const SizesContainer = connect(mapStateToProps, mapDispatchToProps)(Sizes);

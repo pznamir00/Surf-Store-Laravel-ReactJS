@@ -278,10 +278,6 @@ input[type=number] {
   padding-bottom: 100%;
 }
 
-.index-subcategory:hover {
-  text-decoration: none;
-}
-
 #cat_a {
   color: #5174e8;
 }

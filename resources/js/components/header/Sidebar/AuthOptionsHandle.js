@@ -1,17 +1,31 @@
-import React, { useState, useEffect, useRef, memo } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
+import { connect } from 'react-redux'
+import actions from '../../../redux/authOptions/actions'
 const bootstrapLargeGrid = 992;
 
 
-export const AuthOptionsHandle = memo(() => {
-  const panel = useRef($('#header-options').html());
-  const [width, setWidth] = useState($(window).width());
+export const AuthOptionsHandle = memo((props) => {
 
+  const panel = useRef($('#header-options').html());
   useEffect(() => {
-    $(window).resize(() => setWidth($(window).width()));
+    $(window).resize(() => props.setWidth($(window).width()));
   }, []);
 
-  if(width && width < bootstrapLargeGrid)
+  if(props.width && props.width < bootstrapLargeGrid)
     return <div dangerouslySetInnerHTML={{ __html: panel.current }}></div>;
   else
     return null;
 });
+
+
+const mapStateToProps = (state) => {
+  return {
+    width: state.authOptions.width
+  }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    setWidth: width => dispatch(actions.setWidth(width))
+})
+
+export const AuthOptionsHandleContainer = connect(mapStateToProps, mapDispatchToProps)(AuthOptionsHandle);

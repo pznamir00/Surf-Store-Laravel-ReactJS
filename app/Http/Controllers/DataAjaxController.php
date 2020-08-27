@@ -32,18 +32,20 @@ class DataAjaxController extends Controller
 
     public function change_size(Request $request)
     {
-      foreach(session('cart')->items as $key=>$item){
-        if($item['size']->id == $request->sizeId){
-          if($item['size']->quantity > $request->quantity){
+      foreach(session('cart')->items as $key=>$item)
+      {
+        if($item['size']->id == $request->sizeId)
+        {
+          if($item['size']->quantity > $request->quantity)
             $new_quantity = $request->quantity;
-          }
-          else {
+          else
             $new_quantity = $item['size']->quantity;
-          }
-          if($request->quantity < 1){
+
+          if($request->quantity < 1)
             $new_quantity = 1;
-          }
+
           session('cart')->items[$key]['quantity'] = $new_quantity;
+          session('cart')->count_total();
         }
       }
       return response()->json('success');
