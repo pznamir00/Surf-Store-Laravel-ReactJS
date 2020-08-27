@@ -9,7 +9,7 @@
   <h1>{{$product->title}}</h1>
   <hr>
   <strong class="mt-2">
-    <a href="{{ '/products/'.$product->sub_category->base_category->slug.'/'.$product->sub_category->slug }}" id="cat_a">
+    <a href="{{ '/products-list/categories/'.$product->sub_category->base_category->slug.'/'.$product->sub_category->slug }}" id="cat_a">
       Category<i class="fa fa-long-arrow-right"></i>{{$product->sub_category->base_category->title}}<i class="fa fa-long-arrow-right"></i>{{$product->sub_category->title}}
     </a>
   </strong>
