@@ -260,6 +260,8 @@ input[type=number] {
   padding-top: 66.64%;
   margin-top: -150px;
   margin-left: -7.5vw;
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
 }
 
 .index-subcategory {

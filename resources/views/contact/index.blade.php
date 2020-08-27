@@ -6,11 +6,9 @@
 
 {!! Form::open(['action'=>'ContactController@submit_message', 'method'=>'POST']) !!}
   @csrf
-  {{Form::email('email', '', ['class'=>'form-control', 'placeholder'=>'Enter your email'])}}
-  <div class="form-group">
-    {{Form::text('subject', '', ['class'=>'form-control mt-5', 'placeholder'=>'Subject'])}}
-    {{Form::textarea('message', '', ['class'=>'form-control mt-2', 'placeholder'=>'Message'])}}
-  </div>
+  {{Form::email('email', '', ['class'=>'form-control mb-1', 'placeholder'=>'Enter your email'])}}
+  {{Form::text('subject', '', ['class'=>'form-control mb-1', 'placeholder'=>'Subject'])}}
+  {{Form::textarea('message', '', ['class'=>'form-control', 'placeholder'=>'Message'])}}
   <div class="form-group mt-5">
     {!! link_to(URL::previous(), 'Back', ['class'=>'btn btn-default']) !!}
     {!! Form::submit('Send', ['class'=>'btn btn-primary mr-5', 'id'=>'save-button']) !!}
