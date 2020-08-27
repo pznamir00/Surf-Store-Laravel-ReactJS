@@ -26,7 +26,7 @@ const CategoryHandle = props => {
           <h6 data-title_key={key} onClick={categoryClickHandle}>{cat.title}</h6>
           <div data-list_key={key}>
             {cat.subcategories.map((sCat, sKey) =>
-              <a href={"/products/"+cat.slug+"/"+sCat.slug} key={sKey}>{sCat.title}</a>
+              <a href={"/products-list/categories/"+cat.slug+"/"+sCat.slug} key={sKey}>{sCat.title}</a>
             )}
           </div>
         </div>

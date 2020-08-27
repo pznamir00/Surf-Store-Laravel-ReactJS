@@ -102,11 +102,11 @@
       </section>
 
       <section style="width: 100%">
-        <h5>{{ $title }}</h5>
+        <h6>{{ $title }}</h6>
         <div id="root"></div>
         <hr>
         @if($products->isEmpty())
-          <h4>Not found results :(</h4>
+          <h5 class="text-center mt-3">No results :(</h5>
         @else
           @foreach($products as $product)
             <a href="{{ route('one_product', $product->id) }}" class="product col-6 col-lg-4 col-xl-3 mb-2">

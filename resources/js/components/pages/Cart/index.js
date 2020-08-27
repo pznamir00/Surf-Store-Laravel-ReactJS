@@ -21,7 +21,7 @@ const Cart = (props) => {
   }, []);
 
   useEffect(() => {
-    axios.put('/data/cart/size', {
+    axios.patch('/cart/items/sizes', {
         sizeId: props.sizeId,
         quantity: props.quantity,
     });

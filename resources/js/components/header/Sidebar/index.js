@@ -19,7 +19,7 @@ const Sidebar = (props) => {
 
   useEffect(() => {
     (async () => {
-      await axios.get('/data/categories')
+      await axios.get('/categories')
       .then(res => res.data)
       .then(res => props.fetched(res))
       .catch(error => console.log(error));
@@ -38,7 +38,7 @@ const Sidebar = (props) => {
           <span className="fa fa-bars"></span>
       </button>
       <nav id="sidebar" ref={sidebarRef}>
-        <form method="GET" action="/products/search" className="form-inline d-flex justify-content-center md-form form-sm mt-3 mb-3 search-panel">
+        <form method="GET" action="/products-list/keywords" className="form-inline d-flex justify-content-center md-form form-sm mt-3 mb-3 search-panel">
           <i className="fa fa-search" aria-hidden="true"></i>
           <input name="keywords" className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"/>
         </form>

@@ -6,7 +6,7 @@ import actions from '../../../redux/categoriesFetched/actions'
 
 const Categories = props => {
   useEffect(() => {
-    axios.get('/data/categories')
+    axios.get('/categories')
     .then(result => result.data)
     .then(result => props.fetched(result))
     .catch(error => console.log(error));

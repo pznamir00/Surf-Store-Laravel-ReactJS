@@ -14,7 +14,7 @@ export default class Sizes extends Component {
 
   componentDidUpdate(prevProps){
     if(prevProps.categoryId !== this.props.categoryId){
-      axios.get('/data/categories/' + this.props.categoryId + '/sizes')
+      axios.get('/categories/' + this.props.categoryId + '/sizes')
       .then(result => result.data)
       .then(result => this.props.init(result))
       .catch(err => console.log(err));

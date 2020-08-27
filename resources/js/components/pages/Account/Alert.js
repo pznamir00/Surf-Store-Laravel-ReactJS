@@ -4,7 +4,7 @@ export const Alert = (props) => {
   return (
     <React.Fragment>
       <div onClick={props.focusOut} id="cover"></div>
-      <form id="delete-account-confirm-form" onSubmit={props.submitHandle} method="POST" action="/home/account/close">
+      <form id="delete-account-confirm-form" onSubmit={props.submitHandle} method="POST" action="/home/account">
         <input type="hidden" name="_token" value={$('meta[name="csrf-token"]').attr('content')}/>
         <span className="float-right" onClick={props.focusOut}><i className="fa fa-window-close"></i></span>
         <p>Write your nickname to confirm: <b>{props.nickname}</b></p>

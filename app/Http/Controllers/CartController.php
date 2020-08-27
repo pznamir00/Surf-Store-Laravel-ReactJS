@@ -16,7 +16,7 @@ class CartController extends Controller
     }
 
 
-    public function add_to_cart()
+    public function add_to_cart(Request $request)
     {
       if(!request()->has('product_id') || !request()->has('size_id'))
         return redirect('/');

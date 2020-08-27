@@ -13,6 +13,7 @@ class ImageController extends Controller
       $image = new Image;
       $image->upload($request->file('file'));
       $image->save();
+      return response()->json([], 201);
     }
 
     public function set_new_added_images($id)

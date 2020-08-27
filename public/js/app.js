@@ -49465,11 +49465,11 @@ var App = function App() {
     path: "/products/edit/:id",
     component: _components_products_EditProduct__WEBPACK_IMPORTED_MODULE_5__["EditProductContainer"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
-    path: "/products/search",
+    path: "/products-list/keywords",
     component: _components_pages_ProductsList_index__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     exact: true,
-    path: "/products/:cat/:subcat",
+    path: "/products-list/categories/:cat/:subcat",
     component: _components_pages_ProductsList_index__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     path: "/products/:id",
@@ -49659,7 +49659,7 @@ var CategoryHandle = function CategoryHandle(props) {
       "data-list_key": key
     }, cat.subcategories.map(function (sCat, sKey) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/products/" + cat.slug + "/" + sCat.slug,
+        href: "/products-list/categories/" + cat.slug + "/" + sCat.slug,
         key: sKey
       }, sCat.title);
     })));
@@ -49736,7 +49736,7 @@ var Sidebar = function Sidebar(props) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('/data/categories').then(function (res) {
+              return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('/categories').then(function (res) {
                 return res.data;
               }).then(function (res) {
                 return props.fetched(res);
@@ -49771,7 +49771,7 @@ var Sidebar = function Sidebar(props) {
     ref: sidebarRef
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
     method: "GET",
-    action: "/products/search",
+    action: "/products-list/keywords",
     className: "form-inline d-flex justify-content-center md-form form-sm mt-3 mb-3 search-panel"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
     className: "fa fa-search",
@@ -49910,7 +49910,7 @@ var Alert = function Alert(props) {
     id: "delete-account-confirm-form",
     onSubmit: props.submitHandle,
     method: "POST",
-    action: "/home/account/close"
+    action: "/home/account"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "hidden",
     name: "_token",
@@ -50094,7 +50094,7 @@ var Cart = function Cart(props) {
     });
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    axios__WEBPACK_IMPORTED_MODULE_3___default.a.put('/data/cart/size', {
+    axios__WEBPACK_IMPORTED_MODULE_3___default.a.patch('/cart/items/sizes', {
       sizeId: props.sizeId,
       quantity: props.quantity
     });
@@ -50803,7 +50803,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Categories = function Categories(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/data/categories').then(function (result) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/categories').then(function (result) {
       return result.data;
     }).then(function (result) {
       return props.fetched(result);
@@ -51004,7 +51004,7 @@ var Form = function Form() {
     className: "mt-5",
     htmlFor: "dropzone"
   }, "Images"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    action: "/products/images/upload",
+    action: "/products/images",
     method: "POST",
     encType: "multipart/form-data",
     className: "dropzone mt-2",
@@ -51287,7 +51287,7 @@ var Sizes = /*#__PURE__*/function (_Component) {
       var _this = this;
 
       if (prevProps.categoryId !== this.props.categoryId) {
-        axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/data/categories/' + this.props.categoryId + '/sizes').then(function (result) {
+        axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/categories/' + this.props.categoryId + '/sizes').then(function (result) {
           return result.data;
         }).then(function (result) {
           return _this.props.init(result);

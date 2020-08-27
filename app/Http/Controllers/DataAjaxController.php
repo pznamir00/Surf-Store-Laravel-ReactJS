@@ -1,19 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use \Illuminate\Database\QueryException;
 use App\Category;
 use App\SubCategory;
 use Session;
 
+
 class DataAjaxController extends Controller
 {
     public function get_categories()
     {
         $data = Category::with('subcategories')->get();
-        return response()->json($data);
+        return response()->json($data, 200);
     }
 
 
@@ -22,15 +22,15 @@ class DataAjaxController extends Controller
       try{
           $subcategory = SubCategory::find($id);
           $data = $subcategory->sizes;
-          return response()->json($data);
+          return response()->json($data, 200);
       }
       catch(QueryException $e){
-        return response()->json([]);
+        return response()->json([], 200);
       }
     }
 
 
-    public function change_size(Request $request)
+    public function change_size_quantity(Request $request)
     {
       foreach(session('cart')->items as $key=>$item)
       {
@@ -48,6 +48,6 @@ class DataAjaxController extends Controller
           session('cart')->count_total();
         }
       }
-      return response()->json('success');
+      return response()->json('success', 204);
     }
 }

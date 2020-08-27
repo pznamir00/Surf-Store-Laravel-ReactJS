@@ -18,7 +18,8 @@
 
 
 <div>
-  <form id="add-to-cart-form" class="mt-5" method="GET" action="/cart/add-to-cart">
+  <form id="add-to-cart-form" class="mt-5" method="POST" action="/cart/items">
+      @csrf
       @foreach($product->images as $img)
         <input type="hidden" class="slider-image" value="{{$img->url}}"/>
       @endforeach

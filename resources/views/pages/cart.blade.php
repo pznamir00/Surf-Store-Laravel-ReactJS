@@ -33,8 +33,10 @@
   </table>
 </div>
 
-<a href="{{route('order_form')}}" class="btn btn-primary">Order</a>
-<a href="/cart/clear" class="btn btn-danger float-right">Clear cart</a>
+<a href="{{route('personal-data')}}" class="btn btn-primary">Order</a>
+<form method="DELETE" action="/cart">
+  <button type="submit" class="btn btn-danger float-right">Clear cart</button>
+</form>
 
 <div id="root"></root>
 

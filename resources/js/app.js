@@ -23,8 +23,8 @@ const App = () => {
             <Route path='/register' component={RegisterContainer} />
             <Route path='/products/add' component={AddProductContainer} />
             <Route path='/products/edit/:id' component={EditProductContainer} />
-            <Route path='/products/search' component={ProductsList} />
-            <Route exact path='/products/:cat/:subcat' component={ProductsList} />
+            <Route path='/products-list/keywords' component={ProductsList} />
+            <Route exact path='/products-list/categories/:cat/:subcat' component={ProductsList} />
             <Route path='/products/:id' component={OneProductFormContainer} />
             <Route exact path='/cart' component={CartContainer} />
             <Route path='/order/(delivery|payment)' component={OrderInputHandle} />
