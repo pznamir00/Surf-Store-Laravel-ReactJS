@@ -102,7 +102,7 @@
       </section>
 
       <section style="width: 100%">
-        <h6 class="mb-3">{{ $title }}</h6>
+        <h6 class="mb-5">{{ $title }}</h6>
         <div id="root"></div>
         <hr>
         @if($products->isEmpty())
