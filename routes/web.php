@@ -22,13 +22,13 @@ Route::get('/', 'PageController@index');
 
 //products
 Route::middleware('admin')->group(function(){
-  Route::get('/products/add', 'ProductController@add')->name('add_product');
-
   Route::post('/products/add', 'ProductController@commit');
 
-  Route::get('/products/edit/{id}', 'ProductController@edit')->name('edit_product');
+  Route::get('/products/add', 'ProductController@add')->name('add_product');
 
   Route::put('/products/edit/{id}', 'ProductController@update');
+
+  Route::get('/products/edit/{id}', 'ProductController@edit')->name('edit_product');
 
   Route::delete('/products', 'ProductController@delete')->name('delete_product');
 

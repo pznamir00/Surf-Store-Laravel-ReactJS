@@ -93,7 +93,7 @@ class FilterController extends Controller
                     ->paginate(FilterController::PAGINATION);
 
         FilterController::filter_queries_results($products);
-        return view('pages.products_list', compact('title', 'products', 'categories', 'sizes', 'sorts', 'colors', 'producents', 'url_data'));
+        return response()->view('pages.products_list', compact('title', 'products', 'categories', 'sizes', 'sorts', 'colors', 'producents', 'url_data'))->setStatusCode(200);
   }
 
 
@@ -122,6 +122,6 @@ class FilterController extends Controller
                   ->paginate(FilterController::PAGINATION);
 
       FilterController::filter_queries_results($products);
-      return view('pages.products_list', compact('title', 'products', 'categories', 'sizes', 'sorts', 'colors', 'producents', 'url_data'));
+      return response()->view('pages.products_list', compact('title', 'products', 'categories', 'sizes', 'sorts', 'colors', 'producents', 'url_data'))->setStatusCode(200);
   }
 }

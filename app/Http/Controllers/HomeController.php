@@ -17,6 +17,6 @@ class HomeController extends Controller
     public function close_account()
     {
         Auth::user()->delete();
-        return redirect('/')->with('success', 'Your account was deleted successfuly');
+        return response()->redirect('/')->with('success', 'Your account was deleted successfuly')->setStatusCode(200);
     }
 }

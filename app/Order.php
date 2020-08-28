@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\OrderedProduct;
-use App\Size;
-use App\Product;
+
 
 class Order extends Model
 {
@@ -33,24 +32,20 @@ class Order extends Model
     }
 
     public function create_ordered_products($items){
-      foreach($items as $item)
-      {
-        $product = Product::find($item['product id']);
-        $size = Size::find($item['size id']);
-        $ord_prod = new OrderedProduct();
-        $ord_prod->product_id = $product->id;
-        $ord_prod->order_id = $this->id;
-        $ord_prod->size_id = $size->id;
-        $ord_prod->quantity = $item['quantity'];
-        $ord_prod->save();
+      foreach($items as $item){
+        OrderedProduct::create([
+          'product_id' => $item['product']->id,
+          'size_id' => $item['size']->id,
+          'order_id' => $this->id,
+          'quantity' => $item['quantity']
+        ]);
 
-        $size->quantity -= $item['quantity'];
-        $size->save();
-        if($size->quantity == 0){
-          $size->delete();
-        }
+        $item['size']->quantity -= $item['quantity'];
+        $item['size']->save();
+        if($item['size']->quantity <= 0)
+          $item['size']->delete();
 
-        if(count($product->sizes) == 0){
+        if(count($item['product']->sizes) == 0){
           $product->active = false;
           $product->save();
         }

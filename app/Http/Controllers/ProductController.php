@@ -39,16 +39,11 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-      try{
-        $instance = Product::find($id);
-        $categories = Category::all();
-        $colors = Color::all();
-        $producents = Producent::all();
-        return view('products.edit', compact('instance', 'categories', 'colors', 'producents'));
-      }
-      catch(QueryException $e){
-        return redirect('/')->withErrors('Product not found');
-      }
+      $instance = Product::findOrFail($id);
+      $categories = Category::all();
+      $colors = Color::all();
+      $producents = Producent::all();
+      return view('products.edit', compact('instance', 'categories', 'colors', 'producents'));
     }
 
 
@@ -67,13 +62,8 @@ class ProductController extends Controller
 
     public function delete(Request $request)
     {
-      try{
-        $id = $request->product_id;
-        Product::find($id)->delete();
-        return redirect('/')->with('success', 'Deleted product');
-      }
-      catch (QueryException $e){
-        return redirect('/')->withErrors('Product not found');
-      }
+      $id = $request->product_id;
+      Product::findOrFail($id)->delete();
+      return redirect('/')->with('success', 'Deleted product');
     }
 }

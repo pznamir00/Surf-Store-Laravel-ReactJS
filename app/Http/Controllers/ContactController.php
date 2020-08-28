@@ -34,10 +34,10 @@ class ContactController extends Controller
           $message->from($data['app_mail'], $data['email']);
           $message->to($data['app_mail'], 'To '.$data['app_name'])->subject($data['subject']);
         });
-        return redirect('/')->with('success', 'Successful sent message');
+        return redirect('/', 307)->with('success', 'Successful sent message');
       }
       catch(Exception $e){
-        return redirect('/')->with('error', 'Failed to submit your message');
+        return redirect('/', 303)->with('error', 'Failed to submit your message');
       }
     }
 }

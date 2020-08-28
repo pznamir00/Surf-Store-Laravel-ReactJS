@@ -23,12 +23,7 @@ class PageController extends Controller
 
     public function one_product($id)
     {
-        try{
-          $product = Product::find($id);
-          return view('pages.one_product', compact('product'));
-        }
-        catch(QueryException $e){
-          return redirect('/')->withErrors('Product not found');
-        }
+        $product = Product::findOrFail($id);
+        return response()->view('pages.one_product', compact('product'))->setStatusCode(302);
     }
 }
