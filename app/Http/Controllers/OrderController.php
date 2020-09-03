@@ -41,7 +41,7 @@ class OrderController extends Controller
         'zipcode'     => 'required',
       ]);
       Session::put('order_data', $request->all());
-      return redirect('/order/delivery', 304);
+      return redirect('/order/delivery');
     }
 
     public function delivery(Request $request)
@@ -49,7 +49,7 @@ class OrderController extends Controller
       if($request->isMethod('post')){
         $this->validate($request, ['selected-delivery' => 'required']);
         Session::put('delivery_id', $request->input('selected-delivery'));
-        return redirect('/order/payment', 304);
+        return redirect('/order/payment');
       }
       $deliveries = Delivery::all();
       return view('order.delivery', compact('deliveries'));
@@ -60,7 +60,7 @@ class OrderController extends Controller
       if($request->isMethod('post')){
         $this->validate($request, ['selected-payment' => 'required']);
         Session::put('payment_id', $request->input('selected-payment'));
-        return redirect('/order/summary', 304);
+        return redirect('/order/summary');
       }
       $payments = Payment::all();
       return view('order.payment', compact('payments'));
@@ -69,7 +69,7 @@ class OrderController extends Controller
     public function summary()
     {
       if(!Session::has('payment_id') || !Session::has('delivery_id'))
-        return redirect('cart', 307);
+        return redirect('cart');
 
       $products = session('cart')->items;
       $payment = Payment::find(Session::get('payment_id'));
@@ -95,6 +95,6 @@ class OrderController extends Controller
       Session::forget('payment_id');
       Session::forget('delivery_id');
       Session::forget('order_data');
-      return redirect('/', 304)->with('success', 'Ordered succesfully');
+      return redirect('/')->with('success', 'Ordered succesfully');
     }
 }

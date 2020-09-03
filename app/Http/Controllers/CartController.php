@@ -29,7 +29,7 @@ class CartController extends Controller
         $cart->add(request('product_id'), request('size_id'));
         Session::put('cart', $cart);
       }
-      return redirect('/', 304)->with('success', 'Product added to cart');
+      return redirect('/')->with('success', 'Product added to cart');
     }
 
 
@@ -37,13 +37,13 @@ class CartController extends Controller
     {
       $key = $request->input('key');
       Session::get('cart')->remove($key);
-      return redirect('/', 304)->with('success', 'Removed item from cart');
+      return redirect('/')->with('success', 'Removed item from cart');
     }
 
 
     public function clear()
     {
       Session::forget('cart');
-      return redirect('/', 304)->with('success', 'Cleart cart');
+      return redirect('/')->with('success', 'Cleart cart');
     }
 }
