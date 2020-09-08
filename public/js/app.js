@@ -49564,12 +49564,11 @@ if(false) {}
 /*!*********************************************************************!*\
   !*** ./resources/js/components/header/Sidebar/AuthOptionsHandle.js ***!
   \*********************************************************************/
-/*! exports provided: AuthOptionsHandle, AuthOptionsHandleContainer */
+/*! exports provided: AuthOptionsHandleContainer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthOptionsHandle", function() { return AuthOptionsHandle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthOptionsHandleContainer", function() { return AuthOptionsHandleContainer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -49579,7 +49578,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var bootstrapLargeGrid = 992;
-var AuthOptionsHandle = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (props) {
+
+var AuthOptionsHandle = function AuthOptionsHandle(props) {
   var panel = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])($('#header-options').html());
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     $(window).resize(function () {
@@ -49591,7 +49591,7 @@ var AuthOptionsHandle = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(funct
       __html: panel.current
     }
   });else return null;
-});
+};
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
@@ -51557,7 +51557,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var authOptionsReducer = function authOptionsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    width: $(window).width
+    width: $(window).width()
   };
   var action = arguments.length > 1 ? arguments[1] : undefined;
 

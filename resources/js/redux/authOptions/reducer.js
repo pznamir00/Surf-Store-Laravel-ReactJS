@@ -1,7 +1,7 @@
 import types from './types';
 
 
-const authOptionsReducer = (state = { width: $(window).width }, action) => {
+const authOptionsReducer = (state = { width: $(window).width() }, action) => {
   switch(action.type){
     case types.WINDOW_WIDTH_SET:
       return {

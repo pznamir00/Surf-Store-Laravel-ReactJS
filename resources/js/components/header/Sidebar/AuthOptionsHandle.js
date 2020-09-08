@@ -4,18 +4,20 @@ import actions from '../../../redux/authOptions/actions'
 const bootstrapLargeGrid = 992;
 
 
-export const AuthOptionsHandle = memo((props) => {
+
+const AuthOptionsHandle = props => {
 
   const panel = useRef($('#header-options').html());
   useEffect(() => {
-    $(window).resize(() => props.setWidth($(window).width()));
+    $(window).resize(() => props.setWidth($(window).width()))
   }, []);
+
 
   if(props.width && props.width < bootstrapLargeGrid)
     return <div dangerouslySetInnerHTML={{ __html: panel.current }}></div>;
   else
     return null;
-});
+}
 
 
 const mapStateToProps = (state) => {

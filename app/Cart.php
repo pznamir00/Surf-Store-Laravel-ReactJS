@@ -9,7 +9,7 @@ use App\Delivery;
 
 
 
-class Cart
+final class Cart
 {
   public $items;
   public $total;
