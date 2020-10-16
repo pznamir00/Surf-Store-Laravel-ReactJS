@@ -2,14 +2,6 @@
 
 
 
-#hamburger{
-  position: fixed !important;
-  right: 3px !important;
-  top: 3px !important;
-  z-index: 9999999 !important;
-}
-
-
 #sidebar{
   position: fixed;
   top: 0;
@@ -19,6 +11,7 @@
   height: 100vh;
   background: #fff;
   border-left: 1px groove $bg-color-dark;
+  z-index: 100004;
 
   @media(max-width: 900px){
     width: 300px;
@@ -40,9 +33,12 @@
     display: block;
     text-align: left;
     margin-left: 30px;
+    font-family: 'Titillium Web', sans-serif;
+
     &:hover{
       text-decoration: none;
-      opacity: $h-level;
+      color: $special-color;
+      transition: transform(0.3s);
     }
   }
 
@@ -50,6 +46,18 @@
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    i{
+      color: $special-color;
+      float: left;
+    }
+
+    input{
+      border: none;
+      border-bottom: solid 1px $special-color;
+    }
   }
 
   #sidebar-categories{
@@ -60,7 +68,8 @@
     h6{
       color: #888;
       margin-left: 20px;
-      font-family: $special-font;
+      font-family: 'Titillium Web', sans-serif;
+      font-size: 21px;
       font-weight: bold;
       text-align: left;
       &:after{
@@ -71,15 +80,24 @@
       }
       &:hover{
         cursor: pointer;
+        color: $special-color;
+        transition: 0.2s;
       }
     }
 
     a{
       display: block;
       color: $dark-gray;
+      font-weight: bold;
       &:hover{
         text-decoration: none;
         opacity: $h-level;
+      }
+
+      &:before{
+        content: "\25b8";
+        margin-right: 10px;
+        color: $special-color;
       }
     }
 

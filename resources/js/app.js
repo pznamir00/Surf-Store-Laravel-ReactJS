@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import { Provider } from "react-redux"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import HomeSlider from './components/pages/Home';
 import { AddProductContainer } from './components/products/AddProduct';
 import { EditProductContainer } from './components/products/EditProduct';
 import { OneProductFormContainer } from './components/pages/OneProduct/index';
@@ -19,6 +20,7 @@ const App = () => {
         <div className="container">
         <Router>
           <Switch>
+            <Route exact path='/' component={HomeSlider} />
             <Route exact path='/home' component={AccountDeleteContainer} />
             <Route path='/register' component={RegisterContainer} />
             <Route path='/products/add' component={AddProductContainer} />

@@ -1,15 +1,11 @@
 import React from 'react';
-import { FiltersContainer } from './Filters/index';
-import { RangeInputHandleContainer } from './RangeInputHandle/index';
+import Filters from './Filters';
 import './style.scss';
 
 
 const ProductsList = () => {
   return (
-    <React.Fragment>
-      <FiltersContainer/>
-      <RangeInputHandleContainer/>
-    </React.Fragment>
+    <Filters/>
   )
 }
 

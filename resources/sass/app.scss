@@ -6,9 +6,11 @@
 
 //own styles
 @import 'animations',
-        'cart/delivery',
-        'cart/payment',
-        'cart/summary',
+        'auth/index',
+        'order/delivery',
+        'order/payment',
+        'order/summary',
+        'order/personal_data',
         'errors/_404',
         'layouts/header',
         'layouts/main',

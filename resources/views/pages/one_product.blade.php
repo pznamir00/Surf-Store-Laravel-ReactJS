@@ -60,10 +60,10 @@
     @endif
   @endif
 
-  <div class="float-right" style="color: #aaa;">
-    <span>ID: {{$product->id}}</span>
+  <div class="d-block text-muted">
+    <small>ID: {{$product->id}}</small>
     <br>
-    <span>Added at: {{$product->created_at}}</span>
+    <small>Added at: {{$product->created_at}}</small>
   </div>
 </div>
 

@@ -4,9 +4,9 @@
 
 @section('content')
 
-  {!! Form::open(['method'=>'POST', 'action'=>'OrderController@save_data_form']) !!}
+  {!! Form::open(['method'=>'POST', 'action'=>'OrderController@save_data_form', 'id'=>'personal-data-order-form']) !!}
 
-    <h3 class="mb-2">Contact informations</h3>
+    <h5 class="mb-2">Contact informations</h5>
     {{Form::Label('Email')}}
     {{Form::text('email', $data['email'], ['class'=>'form-control'])}}
     {{Form::Label('First_name')}}
@@ -16,7 +16,7 @@
     {{Form::Label('Phone number')}}
     {{Form::text('phone', $data['phone'], ['class'=>'form-control'])}}
 
-    <h3 class="mt-5 mb-2">Address for shipping</h3>
+    <h5 class="mt-5 mb-2">Address for shipping</h5>
     {{Form::Label('Street')}}
     {{Form::text('street', $data['street'], ['class'=>'form-control'])}}
     {{Form::Label('Home number')}}

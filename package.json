@@ -28,8 +28,13 @@
     "dependencies": {
         "@babel/core": "^7.11.1",
         "@babel/preset-env": "^7.11.0",
+        "fs": "0.0.1-security",
+        "hamburger-react": "^2.2.0",
         "react-redux": "^7.2.1",
         "react-router-dom": "^5.2.0",
+        "react-simple-image-slider": "^1.0.4",
+        "react-slideshow-image": "^3.3.0",
+        "reactrangeslider": "^3.0.6",
         "redux": "^4.0.5"
     }
 }

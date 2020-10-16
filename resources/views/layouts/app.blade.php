@@ -11,25 +11,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans+Condensed:wght@300&family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/burgers.css') }}"/>
     <title>Surf Store @yield('title')</title>
 </head>
 <body>
     @include('layouts.header')
     <main class="py-4">
-        <div class="mt-5 mb-5" style="margin-top: 100px;">
+        <div>
           @if(Session::has('errors'))
-            {!! implode('', $errors->all('<div class="btn btn-danger mt-5" style="width: 100%;">:message</div>')) !!}
+            {!! implode('', $errors->all('<div class="btn btn-danger site-info">:message</div>')) !!}
           @endif
-        </div>
-        <div class="mt-5 mb-5" style="margin-top: 100px;">
           @if(session('success'))
-            <div class="btn btn-success mt-5" style="width: 100%;">{{ session('success') }}</div>
+            <div class="btn btn-success site-info">{{ session('success') }}</div>
           @endif
-        </div>
-        <div class="mt-5 mb-5" style="margin-top: 100px;">
           @if(session('info'))
-            <div class="btn btn-info mt-5" style="width: 100%;">{{ session('info') }}</div>
+            <div class="btn btn-info site-info">{{ session('info') }}</div>
           @endif
         </div>
         <div style="margin-top: 180px; margin-bottom: 180px;">

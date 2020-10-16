@@ -1,0 +1,25 @@
+@import '_variables';
+
+#personal-data-order-form{
+
+  h5{
+    color: $special-color;
+    text-transform: uppercase;
+  }
+
+  label{
+    margin-top: 15px;
+  }
+
+  input[type="text"], input[type="email"]{
+    border-radius: 0;
+    border: none;
+    border-bottom: #aaa solid 1px;
+    margin-top: -15px;
+  }
+
+  input[type="submit"]{
+    background-color: $special-color;
+    border-color: $special-color;
+  }
+}

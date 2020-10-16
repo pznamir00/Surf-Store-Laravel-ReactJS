@@ -5,7 +5,7 @@
 @section('content')
 
 <div id="cart-table-container">
-  <table class="table table cart-tabl">
+  <table class="table">
     <thead>
         <th></th>
         <th>Title</th>
@@ -16,7 +16,7 @@
     <thead>
     @foreach(session('cart')->items as $key => $item)
       <tr>
-        <td><img class="cart-image" src="{{ 'images/'.$item['product']->images[0]->url }}" alt="Cart Img"/></td>
+        <td><img class="cart-image" src="{{ 'media/products/'.$item['product']->images[0]->url }}" alt="Cart Img"/></td>
         <td>{{ $item['product']->title }}</td>
         <td>{{ $item['product']->price }}</td>
         <td>{{ $item['size']->size->value }}</td>
@@ -25,7 +25,7 @@
           {!! Form::open(['action'=>'CartController@delete_from_cart', 'method'=>'DELETE']) !!}
             @csrf
             {{Form::hidden('key', $key)}}
-            {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
+            {{Form::submit('Delete', ['class'=>'btn btn-default text-danger'])}}
           {!! Form::close() !!}
         </td>
       </tr>
@@ -33,10 +33,11 @@
   </table>
 </div>
 
-<a href="{{route('personal-data')}}" class="btn btn-primary">Order</a>
 <form method="DELETE" action="/cart">
-  <button type="submit" class="btn btn-danger float-right">Clear cart</button>
+  <button type="submit" class="btn btn-danger">Clear cart</button>
 </form>
+
+<a href="{{route('personal-data')}}" class="btn btn-default order-button">Order</a>
 
 <div id="root"></root>
 

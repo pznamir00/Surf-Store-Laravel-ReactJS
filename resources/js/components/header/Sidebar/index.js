@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import sidebarActions from '../../../redux/sidebar/actions'
 import categoriesFetchedActions from '../../../redux/categoriesFetched/actions'
 import $ from 'jquery';
+import Hamburger from 'hamburger-react'
 
 
 
@@ -19,7 +20,7 @@ const Sidebar = (props) => {
 
   useEffect(() => {
     (async () => {
-      await axios.get('/categories')
+      await axios.get('/api/categories')
       .then(res => res.data)
       .then(res => props.fetched(res))
       .catch(error => console.log(error));
@@ -30,17 +31,22 @@ const Sidebar = (props) => {
     const $sidebar = $(sidebarRef.current);
     const r = props.display ? '0px' : '-400px';
     $sidebar.animate({ right: r }, 200);
+    const cover = document.getElementById('cover');
+    cover.style['display'] = props.display ? 'block' : 'none';
+
+    const specialColor = $('.fa-search').css('color');
+    $('.hamburger-react div').css({ background: `${props.display ? specialColor : '#333'} none repeat scroll 0% 0%` });
+
   }, [props.display]);
 
   return (
     <React.Fragment>
-      <button id="hamburger" className="navbar-toggler" type="button" onClick={move}>
-          <span className="fa fa-bars"></span>
-      </button>
+      <div id="cover" onClick={move}/>
+      <Hamburger id="hamburger" toggled={props.display} toggle={move} />
       <nav id="sidebar" ref={sidebarRef}>
-        <form method="GET" action="/products-list/keywords" className="form-inline d-flex justify-content-center md-form form-sm mt-3 mb-3 search-panel">
-          <i className="fa fa-search" aria-hidden="true"></i>
-          <input name="keywords" className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search"/>
+        <form method="GET" action="/products-list/keywords" className="form-inline d-flex justify-content-center md-form form-sm mt-0 search-panel" aria-label="Search">
+          <i className="fa fa-search" aria-hidden="true"/>
+          <input className="" name='keywords' type="text" placeholder="Search" aria-label="Search"/>
         </form>
         <AuthOptionsHandleContainer/>
         <CategoryHandleContainer

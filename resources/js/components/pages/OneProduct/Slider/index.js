@@ -32,7 +32,7 @@ class Slider extends Component {
   }
 
   render(){
-    const currentImagePath = '/images/' + this.props.imageNames[this.props.currentKey];
+    const currentImagePath = '/media/products/' + this.props.imageNames[this.props.currentKey];
     return (
       <React.Fragment>
 	      <div className="mb-5 pb-5">
@@ -46,7 +46,7 @@ class Slider extends Component {
             </div>
           </div>
           {this.props.imageNames.map((imgName, key) =>
-            <img src={"/images/" + imgName} key={key} data-key={key} className="slider-image" onClick={this.select} alt="Slider image"/>
+            <img src={"/media/products/" + imgName} key={key} data-key={key} className="slider-image" onClick={this.select} alt="Slider image"/>
           )}
 	      </div>
       </React.Fragment>

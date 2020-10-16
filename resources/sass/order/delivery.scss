@@ -1,0 +1,11 @@
+.delivery-logo{
+  height: 40px;
+}
+
+td {
+  p{
+    &::before{
+      content: "$";
+    }
+  }
+}

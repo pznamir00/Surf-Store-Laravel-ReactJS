@@ -1,49 +1,27 @@
 @import 'variables';
 
 footer{
-  min-height: 100px;
-  color: #ddd;
   background: $dark-gray;
-  text-align: left;
+  color: #aaa;
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 0;
 
   a{
-    color: #bbb;
-    display: block;
-
-    &:hover{
-      text-decoration: none;
-      color: #bbb;
-      opacity: $h-level;
-    }
-  }
-
-  h4{
     color: $special-color;
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0px 30px;
   }
 
-  .f-cats, .f-auth, .f-site{
-    padding: 20px;
-    margin-left: 30px;
+  ._wh{
+    color: #aaa;
   }
 
-  .f-cats{
-    h6{
-      margin-left: -20px;
-      color: $special-color;
-    }
-  }
-
-  .medias{
+  p{
+    width: 100%;
     text-align: center;
-    a{
-      display: inline-block;
-      color: $special-color;
-    }
-  }
-
-  .f-copyright{
-    text-align: center;
-    padding: 3px;
-    background: #222;
+    margin-top: 5px;
+    margin-bottom: -10px;
+    font-size: 12px;
   }
 }

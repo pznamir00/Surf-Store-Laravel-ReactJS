@@ -16,15 +16,6 @@ use App\Producent;
 class FilterController extends Controller
 {
   private const PAGINATION = 20;
-  private const SORT_WAYS = [
-    'created_at'      => 'As newest',
-    'created at DESC' => 'As oldest',
-    'price'           => 'As lowest price',
-    'price DESC'      => 'As highest price',
-    'title'           => 'A - Z',
-    'title DESC'      => 'Z - A',
-  ];
-
 
 
   private static function get_data_from_url()
@@ -79,11 +70,6 @@ class FilterController extends Controller
   {
         $title = 'Category > '.$cat.' > '.$subcat;
         $subcategory = SubCategory::where('slug', $subcat)->first();
-        $categories = Category::all();
-        $colors = Color::all();
-        $producents = Producent::all();
-        $sizes = $subcategory->sizes;
-        $sorts = FilterController::SORT_WAYS;
         $url_data = FilterController::get_data_from_url();
         $products = Product::where('active', 1)
                     ->where('sub_category_id', $subcategory->id)
@@ -93,7 +79,7 @@ class FilterController extends Controller
                     ->paginate(FilterController::PAGINATION);
 
         FilterController::filter_queries_results($products);
-        return response()->view('pages.products_list', compact('title', 'products', 'categories', 'sizes', 'sorts', 'colors', 'producents', 'url_data'))->setStatusCode(200);
+        return view('pages.products_list', compact('title', 'products', 'subcategory'));
   }
 
 
@@ -105,11 +91,6 @@ class FilterController extends Controller
 
       $keywords = request('keywords');
       $title = 'Keywords: '.$keywords;
-      $categories = Category::all();
-      $sizes = Size::all();
-      $colors = Color::all();
-      $producents = Producent::all();
-      $sorts = FilterController::SORT_WAYS;
       $url_data = FilterController::get_data_from_url();
       $products = Product::where('active', 1)
                   ->where(function($query) use ($keywords){
@@ -122,6 +103,6 @@ class FilterController extends Controller
                   ->paginate(FilterController::PAGINATION);
 
       FilterController::filter_queries_results($products);
-      return response()->view('pages.products_list', compact('title', 'products', 'categories', 'sizes', 'sorts', 'colors', 'producents', 'url_data'))->setStatusCode(200);
+      return view('pages.products_list', compact('title', 'products'));
   }
 }

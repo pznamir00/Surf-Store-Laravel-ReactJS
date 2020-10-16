@@ -87,10 +87,20 @@ Route::get('/products-list/categories/{category}/{subcategory}', 'FilterControll
 Route::get('/products/{id}', 'PageController@one_product')->name('one_product');
 
 
-//layouts
-Route::get('/categories', 'DataAjaxController@get_categories');
+//api
+Route::get('/api/categories', 'ApiController@get_categories');
 
-Route::get('/categories/{id}/sizes', 'DataAjaxController@get_sizes');
+Route::get('/api/categories/{id}/sizes', 'ApiController@get_sizes');
+
+Route::get('/api/images/catalog', 'ApiController@get_catalog_filenames');
+
+Route::get('/api/producents', 'ApiController@get_producents');
+
+Route::get('/api/colors', 'ApiController@get_colors');
+
+Route::get('/api/sizes', 'ApiController@get_all_sizes');
+
+Route::get('/api/sorts', 'ApiController@get_sorts');
 
 
 

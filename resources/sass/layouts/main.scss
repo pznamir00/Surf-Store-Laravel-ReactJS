@@ -14,11 +14,30 @@ main{
   min-height: 870px;
 }
 
-.error{
-  width: 300px;
-  margin: 10px;
+.site-info{
+  position: fixed;
+  width: 100vw;
+  height: 40px;
+  top: 50px;
+  left: 0;
+  border-radius: 0;
+  z-index: 3;
+
+  @media(max-width: 950px){
+    text-align: left !important;
+  }
 }
 
 .fa{
   padding: 10px !important;
+}
+
+#cover{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100001;
 }

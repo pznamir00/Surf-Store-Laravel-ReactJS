@@ -1,0 +1,43 @@
+@import 'variables';
+
+.auth-card{
+  border: 1px solid #aaa;
+
+  .auth-card-head{
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    background: $dark-gray;
+    padding: 10px 0px;
+  }
+
+  input[type="email"], input[type="password"], input[type="text"]{
+    border: none;
+    border-bottom: solid 1px #aaa;
+    border-radius: 0;
+  }
+
+  button[type="submit"]{
+    background: $special-color !important;
+    border: 1px solid $special-color !important;
+    border-radius: 0 !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+  }
+
+  a, h6{
+    color: $special-color;
+
+    &:hover{
+      color: $special-color;
+    }
+  }
+
+  .auth-card-body{
+    padding: 30px;
+  }
+}

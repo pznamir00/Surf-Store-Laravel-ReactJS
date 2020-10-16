@@ -1,8 +1,12 @@
 <header>
     <nav class="navbar navbar-light bg-white shadow-sm">
-      <a class="navbar-brand ml-auto mr-auto ml-lg-5 pl-lg-5" href="{{ url('/') }}">
-          <b>{{ __('Surf Store') }}</b>
+      <a class="navbar-brand ml-5 pl-5" href="{{ url('/') }}">
+          <img id="logo" src="/media/site/logo.png" alt="Logo" />
       </a>
+      <div id="header-links" class="d-none d-xl-block">
+        <a href="/"><i class="fa fa-home"></i>Home</a>
+        <a href="{{ route('contact') }}"><i class="fa fa-envelope"></i>Contact</a>
+      </div>
       <div id="header-options" class="mr-5 pr-5 d-none d-lg-block">
         @guest
           <a href="{{ route('login') }}"><i class="fa fa-user"></i>Sign in</a>

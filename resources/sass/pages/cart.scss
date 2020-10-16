@@ -1,3 +1,5 @@
+@import '_variables';
+
 #cart-table-container{
   padding: 15px;
   box-sizing: border-box;
@@ -5,6 +7,11 @@
 
   @media(max-width: 580px){
     overflow-x: scroll;
+  }
+
+  th{
+    font-family: $special-font;
+    color: $special-color;
   }
 }
 
@@ -16,4 +23,9 @@
 
 input[type="number"]{
   width: 80px;
+}
+
+.order-button{
+  float: right;
+  margin-top: -20px;
 }

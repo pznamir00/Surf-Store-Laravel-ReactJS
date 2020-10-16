@@ -4,10 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
-                <div class="card-body">
+            <div class="auth-card">
+                <div class="auth-card-head">{{ __('Reset Password') }}</div>
+                <div class="auth-card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -26,7 +25,7 @@
                                   type="email"
                                   class="form-control @error('email') is-invalid @enderror"
                                   name="email"
-                                  value="{{ Auth::check() ? Auth::user()->email : '' }}" 
+                                  value="{{ Auth::check() ? Auth::user()->email : '' }}"
                                   required
                                   autocomplete="email"
                                   autofocus
@@ -40,10 +39,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-4">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                                    {{ __('Send Link') }}
                                 </button>
                             </div>
                         </div>
