@@ -1,5 +1,4 @@
 <h1>Surf store Laravel/ReactJS</h1>
-<a href="http://surf-store-1.herokuapp.com/">Link</a>
 <hr>
 <h3>Technology</h3>
 <h4>Frontend</h4>
